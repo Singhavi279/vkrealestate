@@ -115,10 +115,6 @@
   object-fit: contain;
 }
 
-.nav-logo:hover img {
-  opacity: 0.72;
-}
-
 .nav-logo-ti img { height: 26px; }
 .nav-logo-vk img { height: 28px; }
 .nav-logo-tll img { height: 22px; }
