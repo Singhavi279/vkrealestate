@@ -1,0 +1,382 @@
+/* ============================================================
+   VKREA 2026 — "GOLDEN HOUR / MONUMENTAL"
+   5 · RESPONSIVE — mobile-first, 5 breakpoints
+   375 · 480 · 768 · 1024 · 1440+
+   ============================================================ */
+
+/* ============================================================
+   CATEGORIES + ELIGIBILITY — stack below 992px
+   ============================================================ */
+@media (max-width: 991px) {
+  .categories-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .cat-sidebar {
+    flex-direction: row;
+    overflow-x: auto;
+    padding-bottom: 8px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 12px;
+  }
+
+  .cat-tab-button {
+    flex-shrink: 0;
+    scroll-snap-align: start;
+    width: 260px;
+  }
+
+  .eligibility-table,
+  .eligibility-table tbody,
+  .eligibility-table tr,
+  .eligibility-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .eligibility-table td {
+    border-right: 0;
+    padding: 12px;
+  }
+}
+
+@media (max-width: 575px) {
+  .cat-content {
+    padding: 24px 16px;
+  }
+
+  .cat-panel-header {
+    gap: 16px;
+    margin-bottom: 24px;
+    padding-bottom: 18px;
+  }
+
+  .cat-panel-icon {
+    width: 44px;
+    height: 44px;
+  }
+
+  .cat-panel-title { font-size: 23px; }
+
+  .acc-header {
+    padding: 16px;
+    gap: 12px;
+  }
+
+  .acc-content { padding: 0 16px 16px 16px; }
+  .acc-content-box { padding: 14px; }
+  .acc-title { font-size: 14.5px; }
+
+  .eligibility-shell { padding: 0 16px; }
+  .eligibility-table td { padding: 11px; }
+}
+
+/* ============================================================
+   375–479 · BASE MOBILE
+   ============================================================ */
+@media (max-width: 479px) {
+  :root {
+    --gutter: 16px;
+    --section-pad: 52px;
+  }
+
+  .nav { padding: 14px 16px; }
+  .nav.scrolled { padding: 10px 16px; }
+  .nav-row { padding: 0 16px; }
+  .nav-logo-tll { display: none; }
+  .nav-initiative-tag { font-size: 7px; }
+  .nav-mini-sep { display: none; }
+  .nav-initiative-row { gap: 0; }
+
+  .nav-links,
+  .nav-cta { display: none; }
+
+  .nav-burger {
+    display: flex;
+    margin-left: auto;
+  }
+
+  .nav.menu-open .nav-row {
+    flex-wrap: wrap;
+    row-gap: 12px;
+  }
+
+  .nav.menu-open .nav-links {
+    display: flex;
+    order: 10;
+    width: 100%;
+    margin-left: 0;
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+    padding-top: 12px;
+    border-top: 1px solid var(--line);
+  }
+
+  .nav.menu-open .nav-cta {
+    display: inline-flex;
+    order: 11;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 92px 16px 52px;
+    justify-content: flex-start;
+  }
+
+  .hero-initiative { margin-bottom: 20px; }
+
+  .hero-initiative-logos {
+    gap: 14px;
+    padding: 11px 16px;
+  }
+
+  .hero-initiative-logo img { height: 32px; }
+
+  .hero-kannada-en { margin-bottom: 20px; }
+
+  .hero-tagline { margin-bottom: 22px; }
+
+  .hero-ctas {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-ctas .btn { width: 100%; }
+
+  .overview-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .overview-headline { position: static; }
+
+  .why-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .why-card {
+    grid-column: span 1 !important;
+    padding: 26px 24px;
+  }
+
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+    gap: 32px;
+  }
+
+  .price-card.spotlight {
+    transform: none;
+  }
+
+  .price-card.spotlight:hover {
+    transform: translateY(-4px);
+  }
+
+  .partners-enquiries {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .partner-card { padding: 28px 24px; }
+
+  .judging-timeline { padding-left: 56px; }
+  .judging-line { left: 20px; }
+
+  .step-num {
+    left: -56px;
+    width: 36px;
+    font-size: 22px;
+    top: 4px;
+  }
+
+  .judging-step::before {
+    left: -41px;
+    top: 10px;
+  }
+
+  .nomination-form { padding: 24px 18px; }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .form-group.full-width { grid-column: span 1; }
+  .form-submit-row .btn { max-width: 100%; }
+
+  .footer { padding: 40px 16px 22px; }
+
+  .footer-mid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding-bottom: 24px;
+  }
+}
+
+/* ============================================================
+   480–767 · LARGER PHONES
+   ============================================================ */
+@media (min-width: 480px) and (max-width: 767px) {
+  :root {
+    --gutter: 20px;
+    --section-pad: 68px;
+  }
+
+  .nav-row { padding: 0 20px; }
+  .nav-logo-tll { display: none; }
+
+  .nav-links,
+  .nav-cta { display: none; }
+
+  .nav-burger {
+    display: flex;
+    margin-left: auto;
+  }
+
+  .nav.menu-open .nav-row {
+    flex-wrap: wrap;
+    row-gap: 12px;
+  }
+
+  .nav.menu-open .nav-links {
+    display: flex;
+    order: 10;
+    width: 100%;
+    margin-left: 0;
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+    padding-top: 12px;
+    border-top: 1px solid var(--line);
+  }
+
+  .nav.menu-open .nav-cta {
+    display: inline-flex;
+    order: 11;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 104px 20px 64px;
+    justify-content: flex-start;
+  }
+
+  .hero-initiative-logo img { height: 38px; }
+
+  .hero-ctas { gap: 12px; }
+
+  .overview-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .overview-headline { position: static; }
+
+  .why-grid { grid-template-columns: 1fr; }
+  .why-card { grid-column: span 1 !important; }
+
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    max-width: 440px;
+    margin: 0 auto;
+  }
+
+  .price-card.spotlight { transform: none; }
+  .price-card.spotlight:hover { transform: translateY(-4px); }
+
+  .partners-enquiries {
+    grid-template-columns: 1fr;
+    max-width: 440px;
+  }
+
+  .judging-timeline { padding-left: 64px; }
+  .judging-line { left: 24px; }
+
+  .step-num {
+    left: -64px;
+    width: 44px;
+    font-size: 26px;
+  }
+
+  .judging-step::before { left: -46px; }
+
+  .footer-mid { grid-template-columns: 1fr 1fr; }
+}
+
+/* ============================================================
+   768–1023 · TABLET
+   ============================================================ */
+@media (min-width: 768px) and (max-width: 1023px) {
+  :root { --gutter: 24px; }
+
+  .nav-row { padding: 0 24px; }
+
+  .nav-links {
+    gap: 22px;
+    font-size: 12px;
+  }
+
+  .overview-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+
+  .why-grid { grid-template-columns: repeat(2, 1fr); }
+  .why-card:nth-child(4) { grid-column: auto / span 2; }
+  .why-card:nth-child(5) { grid-column: auto / span 2; }
+
+  .pricing-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+
+  .price-card.spotlight { transform: none; }
+
+  .partners-enquiries {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+}
+
+/* ============================================================
+   1024–1439 · DESKTOP
+   ============================================================ */
+@media (min-width: 1024px) and (max-width: 1439px) {
+  :root { --gutter: 40px; }
+
+  .nav-links { gap: 30px; }
+  .nav-row { padding: 0 28px; }
+}
+
+/* ============================================================
+   1440+ · WIDE
+   ============================================================ */
+@media (min-width: 1440px) {
+  :root { --gutter: 64px; }
+
+  .nav-links { gap: 38px; }
+  .nav-row { padding: 0 48px; }
+}
+
+/* ============================================================
+   TOUCH DEVICES — drop hover transforms
+   ============================================================ */
+@media (hover: none) {
+  .why-card:hover,
+  .price-card:hover,
+  .partner-card:hover,
+  .enquiry-card:hover {
+    transform: none;
+  }
+
+  .nav-links a::after { display: none; }
+}

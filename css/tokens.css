@@ -1,0 +1,157 @@
+/* ============================================================
+   VKREA 2026 — "GOLDEN HOUR / MONUMENTAL"
+   1 · TOKENS — material + semantic layers, dual-band theming
+   ============================================================ */
+
+:root {
+  /* ---- MATERIAL · Gold family (richer, more saturated) ---- */
+  --gold-deep:   #7A5410;   /* bronze shadow */
+  --gold:        #C9962E;   /* core brass */
+  --gold-bright: #E8B948;   /* radiant highlight */
+  --gold-champ:  #F3DFA6;   /* champagne / light text-gold */
+  --gold-grad:   linear-gradient(135deg, #7A5410 0%, #C9962E 42%, #F3DFA6 100%);
+  --gold-grad-soft: linear-gradient(135deg, #C9962E 0%, #E8B948 55%, #F3DFA6 100%);
+
+  /* ---- MATERIAL · Indian / Kannada accents ---- */
+  --saffron: #D8541F;
+  --ember:   #F0842C;
+
+  /* ---- MATERIAL · Nightfall surfaces (dark bands) ---- */
+  --night-0: #120D08;
+  --night-1: #1C140B;
+  --night-2: #2A1E10;
+  --night-3: #3A2A16;
+
+  /* ---- MATERIAL · Parchment surfaces (light bands) ---- */
+  --parch-0: #FBF6EC;
+  --parch-1: #F3EAD8;
+  --parch-2: #E9DCC2;
+
+  /* ---- MATERIAL · Text neutrals ---- */
+  --cream: #F7EEDC;   /* on dark */
+  --ink:   #191308;   /* on light */
+
+  /* ---- MATERIAL · State ---- */
+  --success: #2E9E5B;
+  --error:   #D8541F;
+
+  /* ---- LEGACY material aliases (safety net for any stray usage) ---- */
+  --paper: var(--parch-0);
+  --ivory: var(--parch-1);
+  --bone: var(--parch-2);
+  --mist: rgba(247, 238, 220, 0.72);
+  --graphite: var(--text-muted);
+  --stone: var(--text-faint);
+  --whisper: rgba(247, 238, 220, 0.55);
+  --brass: var(--gold);
+  --brass-deep: var(--gold-deep);
+  --brass-soft: var(--gold-champ);
+  --brass-line: var(--line);
+
+  /* ---- TYPE STACKS ---- */
+  --font-display: 'Nunito Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: var(--font-body);
+  --font-kannada: 'Noto Serif Kannada', serif;
+
+  /* ---- TYPE SCALE (fluid) ---- */
+  --t-hero: clamp(44px, 6.6vw, 104px);
+  --t-display: clamp(32px, 4.6vw, 66px);
+  --t-headline: clamp(20px, 2.2vw, 32px);
+  --t-lead: clamp(15px, 1.2vw, 18px);
+  --t-body: clamp(14px, 1vw, 16px);
+  --t-caption: 11px;
+  --t-stat: clamp(48px, 7vw, 112px);
+  --t-kannada: clamp(28px, 4vw, 56px);
+
+  /* ---- SPACING ---- */
+  --gutter: 24px;
+  --section-pad: clamp(48px, 5.8vw, 100px);
+  --sec-h: 100svh;
+
+  /* ---- RADIUS ---- */
+  --radius-sm: 8px;
+  --radius: 14px;
+  --radius-lg: 22px;
+  --radius-pill: 999px;
+
+  /* ---- MOTION ---- */
+  --ease-stage: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-elastic: cubic-bezier(0.34, 1.4, 0.64, 1);
+  --ease-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --d-fast: 220ms;
+  --d-base: 380ms;
+  --d-slow: 700ms;
+  --d-cine: 1000ms;
+
+  /* ============================================================
+     SEMANTIC LAYER — defaults describe a LIGHT (parchment) band.
+     Components reference ONLY these; a band modifier reassigns them.
+     ============================================================ */
+  --bg: var(--parch-0);
+  --bg-grad: radial-gradient(120% 90% at 85% -10%, rgba(232, 185, 72, 0.16), transparent 55%),
+             linear-gradient(180deg, var(--parch-0) 0%, var(--parch-1) 100%);
+  --surface: #FFFFFF;
+  --surface-2: var(--parch-1);
+  --surface-glass: rgba(255, 255, 255, 0.72);
+
+  --text: var(--ink);
+  --text-muted: rgba(25, 19, 8, 0.66);
+  --text-faint: rgba(25, 19, 8, 0.46);
+
+  --accent: var(--gold-deep);          /* readable gold on light */
+  --accent-bright: var(--gold);
+  --accent-grad: var(--gold-grad);
+  --accent-contrast: #FFFFFF;          /* text sitting on a gold fill */
+
+  --line: rgba(122, 84, 16, 0.24);
+  --line-strong: rgba(122, 84, 16, 0.42);
+  --line-gold: linear-gradient(90deg, transparent, var(--gold) 20%, var(--gold-bright) 50%, var(--gold) 80%, transparent);
+
+  --focus-ring: 0 0 0 3px rgba(201, 150, 46, 0.35);
+
+  /* ---- Elevation & glow ---- */
+  --shadow-rgb: 60, 42, 14;
+  --elev-1: 0 6px 18px -10px rgba(var(--shadow-rgb), 0.30);
+  --elev-2: 0 20px 45px -20px rgba(var(--shadow-rgb), 0.30);
+  --elev-3: 0 40px 90px -35px rgba(var(--shadow-rgb), 0.40);
+  --glow-gold: 0 0 40px rgba(232, 185, 72, 0.35), 0 0 12px rgba(201, 150, 46, 0.45);
+  --glow-soft: 0 18px 50px -22px rgba(201, 150, 46, 0.40);
+}
+
+/* ============================================================
+   DARK BAND — reassigns the semantic layer; descendants adapt.
+   Applied via [data-band="dark"] or .band-dark.
+   ============================================================ */
+[data-band="dark"],
+.band-dark,
+.price-card.spotlight {
+  --bg: var(--night-0);
+  --bg-grad: radial-gradient(90% 70% at 78% -5%, rgba(232, 185, 72, 0.22), transparent 55%),
+             radial-gradient(70% 60% at 10% 110%, rgba(201, 150, 46, 0.12), transparent 60%),
+             linear-gradient(180deg, var(--night-0) 0%, var(--night-1) 55%, var(--night-0) 100%);
+  --surface: rgba(42, 30, 16, 0.55);
+  --surface-2: rgba(58, 42, 22, 0.45);
+  --surface-glass: rgba(18, 13, 8, 0.55);
+
+  --text: var(--cream);
+  --text-muted: rgba(247, 238, 220, 0.70);
+  --text-faint: rgba(247, 238, 220, 0.48);
+
+  --accent: var(--gold-bright);        /* bright gold reads on dark */
+  --accent-bright: var(--gold-champ);
+  --accent-grad: var(--gold-grad-soft);
+  --accent-contrast: var(--night-0);
+
+  --line: rgba(232, 185, 72, 0.24);
+  --line-strong: rgba(232, 185, 72, 0.44);
+
+  --focus-ring: 0 0 0 3px rgba(232, 185, 72, 0.45);
+
+  --shadow-rgb: 0, 0, 0;
+  --elev-1: 0 8px 22px -10px rgba(0, 0, 0, 0.55);
+  --elev-2: 0 24px 55px -22px rgba(0, 0, 0, 0.65);
+  --elev-3: 0 46px 100px -35px rgba(0, 0, 0, 0.72);
+  --glow-soft: 0 22px 60px -20px rgba(232, 185, 72, 0.30);
+}

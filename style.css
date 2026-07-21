@@ -1,0 +1,12 @@
+/* ============================================================
+   VKREA 2026 — SUPERSEDED
+   The design system was rewritten as "Golden Hour / Monumental".
+   Styles now live in modular files, loaded in this order from
+   index.html:
+     css/tokens.css       · design tokens + dual-band theming
+     css/base.css         · reset, typography, utilities, effects
+     css/components.css   · buttons, navbar, form, modal
+     css/sections.css     · per-section layouts + band treatments
+     css/responsive.css   · 5 breakpoints
+   This file is no longer linked and is kept only as a pointer.
+   ============================================================ */

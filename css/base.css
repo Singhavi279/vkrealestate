@@ -1,0 +1,251 @@
+/* ============================================================
+   VKREA 2026 — "GOLDEN HOUR / MONUMENTAL"
+   2 · BASE — reset, typography, utilities, effects toolkit
+   ============================================================ */
+
+/* === RESET === */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  width: 100%;
+  background: var(--night-0);
+  scroll-behavior: smooth;
+  scroll-padding-top: 88px;
+}
+
+body {
+  background: var(--parch-0);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: var(--t-body);
+  font-weight: 400;
+  line-height: 1.65;
+  overflow-x: hidden;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+body > .footer {
+  margin-top: auto;
+}
+
+body > header,
+body > section,
+body > footer,
+body > main,
+body > div {
+  margin-left: 0;
+  margin-right: 0;
+  width: 100%;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+button {
+  background: none;
+  border: 0;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+}
+
+svg {
+  display: block;
+}
+
+::selection {
+  background: var(--gold);
+  color: var(--night-0);
+}
+
+:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+  border-radius: var(--radius-sm);
+}
+
+/* ============================================================
+   TYPOGRAPHY UTILITIES
+   ============================================================ */
+.section-tag {
+  font-family: var(--font-body);
+  font-size: var(--t-caption);
+  font-weight: 600;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.section-tag::before {
+  content: '';
+  width: 30px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--accent-grad);
+}
+
+.section-display {
+  font-family: var(--font-display);
+  font-size: var(--t-display);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  color: var(--text);
+}
+
+.section-sub {
+  margin-top: 20px;
+  margin-inline: auto;
+  font-size: var(--t-lead);
+  color: var(--text-muted);
+  line-height: 1.6;
+  max-width: 62ch;
+  font-weight: 400;
+}
+
+.rule {
+  width: 64px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--accent-grad);
+  margin-top: 24px;
+  margin-bottom: 24px;
+  transform-origin: left;
+}
+
+.rule-center {
+  margin-inline: auto;
+  transform-origin: center;
+}
+
+/* ============================================================
+   EFFECTS TOOLKIT
+   ============================================================ */
+
+/* Metallic gold gradient text fill */
+.text-gold {
+  background: var(--accent-grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* On dark bands, add a soft bloom behind gold headline text */
+[data-band="dark"] .text-gold,
+.band-dark .text-gold {
+  filter: drop-shadow(0 2px 18px rgba(232, 185, 72, 0.28));
+}
+
+/* Ambient gold bloom for cards/badges/CTAs */
+.glow {
+  box-shadow: var(--glow-soft);
+}
+
+/* Gold hairline divider element */
+.hairline {
+  height: 1px;
+  width: 100%;
+  border: 0;
+  background: var(--line-gold);
+  opacity: 0.6;
+}
+
+/* Radiant background layer — placed on ::before of dark bands */
+.radiance::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(38% 46% at 82% 8%, rgba(232, 185, 72, 0.30), transparent 62%),
+    radial-gradient(60% 50% at 50% 118%, rgba(201, 150, 46, 0.14), transparent 60%);
+  z-index: 0;
+}
+
+/* Sweeping shimmer highlight (opt-in via .shimmer) */
+.shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -60%;
+  width: 45%;
+  height: 100%;
+  background: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.55), transparent);
+  transform: skewX(-18deg);
+  animation: shimmerSweep 3.6s var(--ease-smooth) infinite;
+  pointer-events: none;
+}
+
+@keyframes shimmerSweep {
+  0% { left: -60%; }
+  55%, 100% { left: 130%; }
+}
+
+/* Reveal helper used by hero line animation (kept for JS/markup compat) */
+.line {
+  display: block;
+  overflow: visible;
+  padding-bottom: 0.08em;
+}
+
+.line-inner {
+  display: inline-block;
+}
+
+/* ============================================================
+   REDUCED MOTION
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .shimmer::after,
+  .nav-all-events::before {
+    animation: none;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
