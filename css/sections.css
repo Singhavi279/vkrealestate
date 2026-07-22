@@ -21,95 +21,327 @@
 }
 
 /* ============================================================
-   1 · HERO  (dark)
+   1 · HERO — Warm Champagne Luxe Theme
    ============================================================ */
-.hero {
+.hero.poster-theme {
   position: relative;
   z-index: 1;
-  background: var(--bg-grad);
-  color: var(--text);
-  min-height: var(--sec-h);
-  padding: clamp(120px, 15vh, 168px) var(--gutter) clamp(64px, 8vh, 96px);
+  width: 100%;
+  min-height: 100vh;
+  padding: clamp(100px, 11vh, 130px) var(--gutter) clamp(48px, 6vh, 80px);
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  align-items: center;
   overflow: hidden;
+  background-image: url('hero-bg.webp');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  color: var(--ink);
 }
 
-/* Dramatic sun-flare + skyline haze behind the hero */
-.hero::before {
-  content: '';
+/* Warm overlay on top of bg image for readability */
+.hero-bg-gradient {
   position: absolute;
   inset: 0;
-  pointer-events: none;
   z-index: 0;
   background:
-    radial-gradient(42% 55% at 84% 6%, rgba(243, 223, 166, 0.42), rgba(232, 185, 72, 0.16) 34%, transparent 64%),
-    radial-gradient(28% 30% at 84% 6%, rgba(255, 250, 235, 0.55), transparent 60%),
-    radial-gradient(80% 60% at 50% 122%, rgba(201, 150, 46, 0.20), transparent 60%);
+    linear-gradient(100deg,
+      rgba(251, 246, 236, 0.82) 0%,
+      rgba(245, 236, 214, 0.72) 45%,
+      rgba(234, 217, 176, 0.45) 70%,
+      rgba(234, 217, 176, 0.05) 100%),
+    radial-gradient(ellipse 80% 60% at 15% 50%, rgba(251, 246, 236, 0.4) 0%, transparent 65%);
+  pointer-events: none;
 }
 
-.hero::after {
-  content: '';
+/* ---- Floating gold particles ---- */
+.hero-particles {
   position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+}
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(201, 150, 46, 0.6) 0%, rgba(201, 150, 46, 0.15) 60%, transparent 100%);
+  animation: particleFloat linear infinite;
+}
+.p1 { width: 3px; height: 3px; top: 18%; left: 12%; animation-duration: 14s; animation-delay: 0s; }
+.p2 { width: 2px; height: 2px; top: 45%; left: 78%; animation-duration: 18s; animation-delay: -3s; }
+.p3 { width: 4px; height: 4px; top: 72%; left: 35%; animation-duration: 12s; animation-delay: -6s; }
+.p4 { width: 2px; height: 2px; top: 30%; left: 55%; animation-duration: 20s; animation-delay: -2s; }
+.p5 { width: 3px; height: 3px; top: 60%; left: 88%; animation-duration: 16s; animation-delay: -8s; }
+.p6 { width: 2px; height: 2px; top: 85%; left: 22%; animation-duration: 22s; animation-delay: -5s; }
+.p7 { width: 3px; height: 3px; top: 10%; left: 65%; animation-duration: 15s; animation-delay: -10s; }
+.p8 { width: 2px; height: 2px; top: 50%; left: 42%; animation-duration: 19s; animation-delay: -7s; }
+
+@keyframes particleFloat {
+  0%   { transform: translateY(0) translateX(0) scale(1); opacity: 0; }
+  10%  { opacity: 0.6; }
+  50%  { transform: translateY(-80px) translateX(20px) scale(1.2); opacity: 0.35; }
+  90%  { opacity: 0.1; }
+  100% { transform: translateY(-160px) translateX(-10px) scale(0.6); opacity: 0; }
+}
+
+/* ---- SVG Bengaluru Skyline (warm gold on light bg) ---- */
+.hero-skyline {
+  position: absolute;
+  bottom: 0;
   left: 0;
   right: 0;
-  bottom: 0;
-  height: 34%;
+  z-index: 2;
+  height: clamp(160px, 30vh, 340px);
   pointer-events: none;
-  z-index: 0;
-  background: linear-gradient(180deg, transparent, rgba(58, 42, 22, 0.45));
-  -webkit-mask-image: repeating-linear-gradient(90deg, #000 0 6px, transparent 6px 22px);
-  mask-image: repeating-linear-gradient(90deg, #000 0 6px, transparent 6px 22px);
-  opacity: 0.5;
+  opacity: 0.7;
+}
+.skyline-svg {
+  width: 100%;
+  height: 100%;
+}
+.win-flicker {
+  animation: windowFlicker 4s ease-in-out infinite alternate;
+}
+.win-flicker:nth-child(odd) { animation-delay: -1.5s; }
+.win-flicker:nth-child(3n)  { animation-delay: -3s; animation-duration: 5s; }
+
+@keyframes windowFlicker {
+  0%, 40%  { opacity: 0.2; }
+  50%      { opacity: 0.8; }
+  60%, 100%{ opacity: 0.4; }
 }
 
-.hero-content {
+/* ---- Decorative gold accent lines ---- */
+.hero-accent-lines {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+}
+.accent-line {
+  position: absolute;
+  background: linear-gradient(90deg, transparent, rgba(201, 150, 46, 0.18), transparent);
+}
+.al-1 { width: 60%; height: 1px; top: 22%; left: -5%; transform: rotate(-2deg); }
+.al-2 { width: 45%; height: 1px; top: 55%; right: -5%; transform: rotate(1.5deg); }
+.al-3 { width: 35%; height: 1px; bottom: 28%; left: 10%; transform: rotate(-1deg); }
+
+/* ---- Content layout ---- */
+.hero-container {
   position: relative;
-  max-width: 1120px;
+  z-index: 5;
+  max-width: 1280px;
   margin: 0 auto;
   width: 100%;
-  z-index: 4;
 }
 
-.hero-initiative {
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  max-width: 680px;
+}
+
+.hero-left-col {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  margin-bottom: 30px;
+  align-items: flex-start;
 }
 
-.hero-initiative-label {
+/* ---- Poster headline — rich espresso serif ---- */
+.poster-headline {
+  font-family: var(--font-display);
+  font-size: clamp(42px, 5vw, 72px);
+  font-weight: 800;
+  line-height: 1.06;
+  letter-spacing: -0.015em;
+  margin-bottom: 14px;
+  color: var(--night-1);
+}
+
+/* ---- Subhead ---- */
+.poster-subhead-1 {
   font-family: var(--font-body);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.34em;
+  font-size: clamp(15px, 1.3vw, 19px);
+  color: var(--night-3);
+  line-height: 1.55;
+  font-weight: 400;
+  margin-bottom: 4px;
+  max-width: 500px;
+}
+
+/* ---- Tagline Pill ---- */
+.poster-tagline-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-body);
+  font-size: clamp(10px, 0.9vw, 12px);
+  font-weight: 700;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--gold-bright);
+  color: var(--parch-0);
+  padding: 9px 20px;
+  border-radius: var(--radius-pill);
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-deep) 100%);
+  box-shadow: 0 6px 18px -4px rgba(122, 84, 16, 0.3);
+  margin: 18px 0 24px;
+}
+.poster-tagline-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--parch-0);
+  box-shadow: 0 0 6px 1px rgba(251, 246, 236, 0.6);
+}
+
+/* ---- CTA Buttons ---- */
+.poster-ctas {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 0;
+}
+
+.btn-poster-primary {
+  background: linear-gradient(135deg, var(--gold-bright) 0%, var(--gold) 100%);
+  color: var(--night-0);
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 700;
+  padding: 13px 30px;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 6px 22px -4px rgba(201, 150, 46, 0.35);
+  border: none;
+  text-decoration: none;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: all var(--d-fast) var(--ease-smooth);
+}
+.btn-poster-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px -4px rgba(201, 150, 46, 0.45);
+  color: var(--night-0);
+}
+
+.btn-poster-ghost {
+  background: transparent;
+  color: var(--gold-deep);
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 700;
+  padding: 13px 26px;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: all var(--d-fast) var(--ease-smooth);
+}
+.btn-poster-ghost:hover {
+  background: rgba(201, 150, 46, 0.08);
+  border-color: var(--gold-bright);
+  color: var(--gold-deep);
+  transform: translateY(-2px);
+}
+
+/* ---- Right column: Emblem ---- */
+.hero-right-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.hero-emblem {
+  width: clamp(240px, 26vw, 380px);
+  height: clamp(240px, 26vw, 380px);
+  position: relative;
+  animation: emblemPulse 8s ease-in-out infinite alternate;
+}
+.emblem-svg {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 0 30px rgba(201, 150, 46, 0.12));
+}
+.emblem-rotate {
+  animation: emblemSpin 60s linear infinite;
+  transform-origin: 150px 150px;
+}
+@keyframes emblemSpin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+@keyframes emblemPulse {
+  0%   { transform: scale(1); opacity: 0.8; }
+  100% { transform: scale(1.03); opacity: 1; }
+}
+
+.hero-partners-row {
+  display: flex;
+  align-items: flex-end;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin: 18px 0 6px;
+}
+
+.hero-initiative,
+.hero-process-advisor {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 0;
+}
+
+.hero-initiative-label,
+.hero-process-advisor-label {
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
 }
 
 .hero-initiative-logos {
   display: inline-flex;
   align-items: center;
-  gap: 22px;
+  gap: 18px;
   width: fit-content;
-  padding: 14px 24px;
+  padding: 12px 20px;
   background: #FFFFFF;
-  border: 1px solid var(--line-strong);
+  border: 1px solid rgba(201, 150, 46, 0.2);
   border-radius: var(--radius);
-  box-shadow: var(--glow-soft);
+  box-shadow: 0 4px 16px -4px rgba(122, 84, 16, 0.1);
 }
 
 .hero-initiative-logo img {
-  height: 44px;
+  height: 36px;
   width: auto;
   object-fit: contain;
 }
 
 .hero-initiative-sep {
   width: 1px;
+  height: 28px;
+  background: rgba(201, 150, 46, 0.2);
+}
+
+.hero-process-advisor-card {
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 20px;
+  background: #FFFFFF;
+  border: 1px solid rgba(201, 150, 46, 0.2);
+  border-radius: var(--radius);
+  box-shadow: 0 4px 16px -4px rgba(122, 84, 16, 0.1);
+}
+
+.hero-process-advisor-logo img {
   height: 36px;
-  background: rgba(122, 84, 16, 0.28);
+  width: auto;
+  object-fit: contain;
 }
 
 .hero-kannada {
@@ -192,6 +424,32 @@
   display: flex;
   gap: 14px;
   flex-wrap: wrap;
+  align-items: center;
+}
+
+.hero-process-advisor-card {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 28px;
+  background: #FFFFFF;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  box-shadow: var(--glow-soft);
+  height: 74px;
+  transition: transform var(--d-fast) var(--ease-smooth), box-shadow var(--d-fast) var(--ease-smooth);
+}
+
+.hero-process-advisor-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--elev-2);
+}
+
+.hero-process-advisor-logo img {
+  height: 44px;
+  width: auto;
+  object-fit: contain;
+  display: block;
 }
 
 /* ============================================================
@@ -216,13 +474,34 @@
   align-items: flex-start;
 }
 
+.overview-grid:has(.overview-image) {
+  align-items: stretch;
+}
+
 .overview-headline {
   position: sticky;
   top: 108px;
 }
 
+.overview-headline:has(.overview-image) {
+  position: static;
+  display: flex;
+  flex-direction: column;
+}
+
 .overview-headline .section-tag {
   margin-bottom: 16px;
+}
+
+.overview-image {
+  margin-top: 40px;
+  width: 100%;
+  flex: 1;
+  min-height: 200px; /* Ensure it doesn't collapse too small */
+  border-radius: var(--radius-lg);
+  box-shadow: 0 16px 40px -12px rgba(60, 42, 14, 0.2);
+  display: block;
+  object-fit: cover;
 }
 
 .overview-text {
@@ -1347,4 +1626,77 @@
 
 .footer-dot {
   color: rgba(247, 238, 220, 0.4);
+}
+
+/* ============================================================
+   11 · STICKY DOCK FOOTER
+   ============================================================ */
+body.has-sticky-dock {
+  padding-bottom: 100px;
+}
+
+.sticky-dock {
+  position: fixed;
+  bottom: 24px;
+  left: 0;
+  right: 0;
+  z-index: 90;
+  display: flex;
+  justify-content: center;
+  pointer-events: none; /* Let clicks pass through outside the dock */
+  padding: 0 var(--gutter);
+}
+
+.sticky-dock-inner {
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  background: rgba(251, 246, 236, 0.85);
+  backdrop-filter: blur(16px) saturate(150%);
+  -webkit-backdrop-filter: blur(16px) saturate(150%);
+  border: 1px solid rgba(122, 84, 16, 0.25);
+  padding: 12px 16px 12px 24px;
+  border-radius: 100px;
+  box-shadow: 0 12px 32px -8px rgba(60, 42, 14, 0.3);
+  max-width: 800px;
+  width: 100%;
+}
+
+.sticky-dock-text {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink);
+  margin: 0;
+}
+
+.sticky-dock-btn {
+  border-radius: 100px;
+  padding: 12px 28px;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  body.has-sticky-dock {
+    padding-bottom: 140px;
+  }
+  .sticky-dock {
+    bottom: 16px;
+  }
+  .sticky-dock-inner {
+    flex-direction: column;
+    padding: 16px;
+    border-radius: var(--radius-lg);
+    text-align: center;
+    gap: 16px;
+  }
+  .sticky-dock-text {
+    font-size: 13px;
+  }
+  .sticky-dock-btn {
+    width: 100%;
+    border-radius: var(--radius-sm);
+  }
 }
