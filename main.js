@@ -310,6 +310,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initCategories();
   initFAQ();
   initNominationForm();
+  initReadMore();
 });
 
 /* ============================================================
@@ -348,13 +349,25 @@ function initNavbar() {
    CATEGORIES · Tab Navigation + Accordion Panels
    ============================================================ */
 function initCategories() {
-  const tabs = document.querySelectorAll('.cat-tab-button');
-  const panels = document.querySelectorAll('.cat-tab-panel');
+  // Each `.js-tab-accordion` root is an independent tab + accordion widget
+  // (Award Categories and Eligibility Criteria both use this same UI).
+  const roots = document.querySelectorAll('.js-tab-accordion');
+  if (roots.length) {
+    roots.forEach(initTabAccordion);
+  } else {
+    // Fallback for markup without the wrapper class (scoped to whole document).
+    initTabAccordion(document);
+  }
+}
+
+function initTabAccordion(root) {
+  const tabs = root.querySelectorAll('.cat-tab-button');
+  const panels = root.querySelectorAll('.cat-tab-panel');
 
   if (!tabs.length || !panels.length) return;
 
   function initAccordions() {
-    const accordions = document.querySelectorAll('.acc-item');
+    const accordions = root.querySelectorAll('.acc-item');
     accordions.forEach(item => {
       const header = item.querySelector('.acc-header');
       const body = item.querySelector('.acc-body');
@@ -434,11 +447,11 @@ function initCategories() {
 
   initAccordions();
 
-  const activePanel = document.querySelector('.cat-tab-panel.active');
+  const activePanel = root.querySelector('.cat-tab-panel.active');
   if (activePanel) setFirstAccordionActive(activePanel);
 
   window.addEventListener('resize', () => {
-    document.querySelectorAll('.acc-item.active .acc-body').forEach(body => {
+    root.querySelectorAll('.acc-item.active .acc-body').forEach(body => {
       body.style.maxHeight = body.scrollHeight + 'px';
     });
   });
@@ -455,6 +468,93 @@ function initFAQ() {
         items.forEach(o => { if (o !== item && o.open) o.open = false; });
       }
     });
+  });
+}
+
+/* ============================================================
+   READ MORE · truncate long overview copy to ~30 words / 300 chars,
+   rounded off to the end of the sentence, with an expand toggle
+   ============================================================ */
+function initReadMore() {
+  document.querySelectorAll('.overview-text').forEach(container => {
+    const paras = Array.from(container.querySelectorAll(':scope > p'));
+    // Each visual unit is a run of paragraphs sharing the same class
+    // (e.g. the larger .overview-lead vs the smaller .overview-body block).
+    const units = [];
+    paras.forEach(p => {
+      const last = units[units.length - 1];
+      if (last && last[0].className === p.className) last.push(p);
+      else units.push([p]);
+    });
+    units.forEach(truncateUnit);
+  });
+}
+
+function truncateUnit(unitParas) {
+  const MIN_WORDS = 30;
+  const MIN_CHARS = 300;
+
+  let wordCount = 0;
+  let charCount = 0;
+  let cutParaIndex = -1;
+  let cutOffset = -1;
+
+  outer:
+  for (let i = 0; i < unitParas.length; i++) {
+    const text = unitParas[i].textContent;
+    const sentences = text.match(/[^.!?]+[.!?]+(\s+|$)/g) || [text];
+    let offset = 0;
+    for (const sentence of sentences) {
+      offset += sentence.length;
+      wordCount += sentence.trim().split(/\s+/).filter(Boolean).length;
+      charCount += sentence.length;
+      if (wordCount >= MIN_WORDS || charCount >= MIN_CHARS) {
+        cutParaIndex = i;
+        cutOffset = offset;
+        break outer;
+      }
+    }
+  }
+
+  // Unit is already short enough — nothing to truncate.
+  const lastIdx = unitParas.length - 1;
+  const cutPara = unitParas[cutParaIndex];
+  if (cutParaIndex === -1 || (cutParaIndex === lastIdx && cutOffset >= cutPara.textContent.length)) {
+    return;
+  }
+
+  const fullText = cutPara.textContent;
+  const visible = fullText.slice(0, cutOffset).trim();
+  const tail = fullText.slice(cutOffset);
+  const restParas = unitParas.slice(cutParaIndex + 1);
+
+  const ellipsis = document.createElement('span');
+  ellipsis.className = 'overview-ellipsis';
+  ellipsis.textContent = '…';
+
+  const hiddenTail = document.createElement('span');
+  hiddenTail.className = 'overview-hidden-tail';
+  hiddenTail.hidden = true;
+  hiddenTail.textContent = tail;
+
+  const btn = document.createElement('button');
+  btn.type = 'button';
+  btn.className = 'overview-readmore-btn';
+  btn.textContent = 'Read More';
+  btn.setAttribute('aria-expanded', 'false');
+
+  cutPara.textContent = '';
+  cutPara.append(document.createTextNode(visible + ' '), ellipsis, hiddenTail, ' ', btn);
+
+  restParas.forEach(p => { p.hidden = true; });
+
+  btn.addEventListener('click', () => {
+    const expanded = btn.getAttribute('aria-expanded') === 'true';
+    hiddenTail.hidden = expanded;
+    ellipsis.hidden = !expanded;
+    restParas.forEach(p => { p.hidden = expanded; });
+    btn.textContent = expanded ? 'Read More' : 'Read Less';
+    btn.setAttribute('aria-expanded', String(!expanded));
   });
 }
 

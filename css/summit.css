@@ -3,7 +3,6 @@
    SUMMIT — page-specific layouts (reuses tokens, effects, bands)
    Loaded only by the summit landing page (index.html).
    ============================================================ */
-
 /* ============================================================
    1 · SUMMIT HERO
    ============================================================ */
@@ -24,6 +23,12 @@
   color: var(--ink);
 }
 
+/* Save-data / 2G: skip the heavy hero background image; the warm overlay
+   gradient still provides a finished-looking backdrop. */
+.slow-net .summit-hero {
+  background-image: none;
+}
+
 /* Warm overlay — dense on left for text, transparent on right to show image */
 .summit-hero-overlay {
   position: absolute;
@@ -38,7 +43,6 @@
     radial-gradient(ellipse 80% 60% at 15% 50%, rgba(251, 246, 236, 0.4) 0%, transparent 65%);
   pointer-events: none;
 }
-
 .summit-hero-container {
   position: relative;
   z-index: 5;
@@ -46,25 +50,22 @@
   margin: 0 auto;
   width: 100%;
 }
-
 .summit-hero-inner {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   max-width: 680px;
 }
-
 /* Headline — Playfair Display, deep espresso */
 .summit-headline {
   font-family: var(--font-display);
-  font-size: clamp(42px, 5vw, 72px);
+  font-size: clamp(38px, 4.5vw, 64px);
   font-weight: 800;
   line-height: 1.06;
   letter-spacing: -0.015em;
   margin-bottom: 14px;
   color: var(--night-1);
 }
-
 /* Subtitle */
 .summit-subhead {
   font-family: var(--font-body);
@@ -75,7 +76,6 @@
   margin-bottom: 4px;
   max-width: 500px;
 }
-
 /* Meta line */
 .summit-meta {
   font-family: var(--font-body);
@@ -86,40 +86,32 @@
   color: var(--gold-deep);
   margin-bottom: 0;
 }
-
 /* Partner row — inherits shared .hero-partners-row styles from sections.css */
 .summit-partners-row {
   margin: 18px 0 24px;
 }
-
 /* ============================================================
    RESPONSIVE — summit hero mobile
    ============================================================ */
 @media (max-width: 768px) {
-  .summit-hero {
-    min-height: auto;
+.summit-hero {
+    min-height: 100vh;
     padding: 88px 20px 80px;
     align-items: flex-start;
   }
-
-  .summit-headline {
+.summit-headline {
     font-size: clamp(34px, 9vw, 44px);
     line-height: 1.08;
     margin-bottom: 10px;
   }
-
-  .summit-subhead {
+.summit-subhead {
     font-size: 15px;
     max-width: 100%;
   }
-
-  .summit-hero-inner {
+.summit-hero-inner {
     max-width: 100%;
   }
 }
-
-
-
 /* Shared shell so summit sections inherit band backgrounds */
 .discuss,
 .forums,
@@ -133,15 +125,6 @@
   border-top: 1px solid var(--line);
   padding: var(--section-pad) var(--gutter);
 }
-
-.summit-shell {
-  max-width: 1280px;
-  margin: 0 auto;
-  width: 100%;
-  position: relative;
-  z-index: 1;
-}
-
 .summit-head {
   text-align: center;
   max-width: 820px;
@@ -149,12 +132,10 @@
   position: relative;
   z-index: 1;
 }
-
 .summit-head .section-tag,
 .summit-head .rule {
   margin-inline: auto;
 }
-
 /* ============================================================
    WHAT WE'LL DISCUSS  (dark)
    ============================================================ */
@@ -167,7 +148,6 @@
   position: relative;
   z-index: 1;
 }
-
 .discuss-card {
   grid-column: span 2;
   background: var(--surface);
@@ -180,17 +160,14 @@
               box-shadow var(--d-base) var(--ease-smooth),
               transform var(--d-base) var(--ease-quart);
 }
-
 .discuss-card:nth-child(9) {
   grid-column: 3 / span 2;
 }
-
 .discuss-card:hover {
   border-color: var(--accent);
   box-shadow: var(--glow-soft);
   transform: translateY(-4px);
 }
-
 .discuss-num {
   font-family: var(--font-display);
   font-size: 20px;
@@ -206,7 +183,6 @@
   -webkit-text-fill-color: transparent;
   color: transparent;
 }
-
 .discuss-title {
   font-family: var(--font-body);
   font-size: clamp(16px, 1.5vw, 18px);
@@ -215,13 +191,6 @@
   line-height: 1.25;
   margin-bottom: 12px;
 }
-
-.discuss-desc {
-  font-size: 13.5px;
-  color: var(--text-muted);
-  line-height: 1.65;
-}
-
 /* ============================================================
    EXCLUSIVE FORUMS  (light)
    ============================================================ */
@@ -234,7 +203,6 @@
   position: relative;
   z-index: 1;
 }
-
 .forum-card {
   position: relative;
   background: var(--surface);
@@ -246,13 +214,11 @@
               box-shadow var(--d-base) var(--ease-smooth),
               transform var(--d-base) var(--ease-quart);
 }
-
 .forum-card:hover {
   border-color: var(--accent);
   box-shadow: var(--glow-soft);
   transform: translateY(-4px);
 }
-
 .forum-tag {
   font-family: var(--font-mono);
   font-size: 10px;
@@ -265,7 +231,6 @@
   align-items: center;
   gap: 10px;
 }
-
 .forum-tag::before {
   content: '';
   width: 26px;
@@ -273,7 +238,6 @@
   border-radius: 2px;
   background: var(--accent-grad);
 }
-
 .forum-title {
   font-family: var(--font-display);
   font-size: clamp(21px, 2vw, 27px);
@@ -282,13 +246,11 @@
   line-height: 1.2;
   margin-bottom: 12px;
 }
-
 .forum-desc {
   font-size: 14px;
   color: var(--text-muted);
   line-height: 1.65;
 }
-
 /* ============================================================
    WHO SHOULD ATTEND  (dark)
    ============================================================ */
@@ -299,14 +261,12 @@
   position: relative;
   z-index: 1;
 }
-
 .attend-chips {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 14px;
 }
-
 .attend-chip {
   display: inline-flex;
   align-items: center;
@@ -322,7 +282,6 @@
               box-shadow var(--d-base) var(--ease-smooth),
               transform var(--d-fast) var(--ease-quart);
 }
-
 .attend-chip::before {
   content: '';
   width: 7px;
@@ -332,13 +291,11 @@
   flex: 0 0 auto;
   box-shadow: 0 0 10px 1px rgba(232, 185, 72, 0.5);
 }
-
 .attend-chip:hover {
   border-color: var(--accent);
   box-shadow: var(--glow-soft);
   transform: translateY(-2px);
 }
-
 /* ============================================================
    WHY ATTEND / WHY PARTNER  (light)
    ============================================================ */
@@ -351,7 +308,6 @@
   position: relative;
   z-index: 1;
 }
-
 .benefit-col {
   background: var(--surface);
   border: 1px solid var(--line);
@@ -361,15 +317,12 @@
   display: flex;
   flex-direction: column;
 }
-
 .benefit-cta {
   margin-top: 28px;
 }
-
 .benefit-col .section-tag {
   margin-bottom: 14px;
 }
-
 .benefit-col h3 {
   font-family: var(--font-display);
   font-size: clamp(22px, 2.1vw, 28px);
@@ -378,13 +331,11 @@
   line-height: 1.2;
   margin-bottom: 22px;
 }
-
 .benefit-list {
   display: flex;
   flex-direction: column;
   gap: 14px;
 }
-
 .benefit-list li {
   position: relative;
   padding-left: 30px;
@@ -392,7 +343,6 @@
   color: var(--text-muted);
   line-height: 1.55;
 }
-
 .benefit-list li::before {
   content: '';
   position: absolute;
@@ -404,7 +354,6 @@
   border-bottom: 2px solid var(--accent);
   transform: rotate(-45deg);
 }
-
 /* ============================================================
    CTA BAND — cross-link to Awards  (dark)
    ============================================================ */
@@ -412,18 +361,15 @@
   text-align: center;
   padding: clamp(64px, 8vw, 120px) var(--gutter);
 }
-
 .cta-band-inner {
   max-width: 760px;
   margin: 0 auto;
   position: relative;
   z-index: 1;
 }
-
 .cta-band .section-display {
   margin-bottom: 18px;
 }
-
 .cta-band-sub {
   font-size: var(--t-lead);
   color: var(--text-muted);
@@ -431,14 +377,12 @@
   max-width: 60ch;
   margin: 0 auto 30px;
 }
-
 .cta-band-actions {
   display: flex;
   gap: 14px;
   justify-content: center;
   flex-wrap: wrap;
 }
-
 /* ============================================================
    SUMMIT CONTACT  (light)
    ============================================================ */
@@ -451,33 +395,28 @@
   position: relative;
   z-index: 1;
 }
-
 /* ============================================================
    RESPONSIVE
    ============================================================ */
 @media (max-width: 1023px) {
-  .discuss-grid { grid-template-columns: repeat(2, 1fr); }
-  .discuss-card { grid-column: auto; }
-  .discuss-card:nth-child(9) { grid-column: auto; }
+.discuss-grid { grid-template-columns: repeat(2, 1fr); }
+.discuss-card { grid-column: auto; }
+.discuss-card:nth-child(9) { grid-column: auto; }
 }
-
 @media (max-width: 767px) {
-  .discuss-grid,
+.discuss-grid,
   .forums-grid,
   .benefits-grid,
   .summit-contact-grid {
     grid-template-columns: 1fr;
   }
-
-  .attend-chip {
+.attend-chip {
     padding: 11px 18px;
     font-size: 13px;
   }
-
-  .cta-band-actions {
+.cta-band-actions {
     flex-direction: column;
     align-items: stretch;
   }
-
-  .cta-band-actions .btn { width: 100%; }
+.cta-band-actions .btn { width: 100%; }
 }

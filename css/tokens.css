@@ -2,7 +2,6 @@
    VKREA 2026 — "GOLDEN HOUR / MONUMENTAL"
    1 · TOKENS — material + semantic layers, dual-band theming
    ============================================================ */
-
 :root {
   /* ---- MATERIAL · Gold family (richer, more saturated) ---- */
   --gold-deep:   #7A5410;   /* bronze shadow */
@@ -119,7 +118,6 @@
   --glow-gold: 0 0 40px rgba(232, 185, 72, 0.35), 0 0 12px rgba(201, 150, 46, 0.45);
   --glow-soft: 0 18px 50px -22px rgba(201, 150, 46, 0.40);
 }
-
 /* ============================================================
    DARK BAND — reassigns the semantic layer; descendants adapt.
    Applied via [data-band="dark"] or .band-dark.

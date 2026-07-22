@@ -8,10 +8,31 @@
     content="VK Real Estate Awards 2026: Karnataka's most authoritative recognition of real estate excellence. 54 categories across developer, leadership, project and technology excellence. Nominations open.">
   <title>VK Real Estate Awards 2026 · Vijaya Karnataka</title>
   <link rel="canonical" href="https://timeslanguages.in/vkrealestate/awards">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+  <meta name="keywords" content="VK Real Estate Awards 2026, Vijaya Karnataka, real estate awards Karnataka, South India property awards, developer of the year, real estate excellence awards, Bengaluru">
+  <meta name="author" content="Vijaya Karnataka · Times Internet">
+  <meta name="theme-color" content="#1C140B">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="VK Real Estate Summit &amp; Awards 2026">
+  <meta property="og:locale" content="en_IN">
   <meta property="og:title" content="VK Real Estate Awards 2026 · Vijaya Karnataka">
-  <meta property="og:description"
-    content="Karnataka's most authoritative recognition of real estate excellence. Nominations open across 54 categories.">
+  <meta property="og:description" content="Karnataka's most authoritative recognition of real estate excellence. Nominations open across 54 categories for South India's developers, leaders and projects.">
   <meta property="og:url" content="https://timeslanguages.in/vkrealestate/awards">
+  <meta property="og:image" content="https://timeslanguages.in/vkrealestate/css/hero-bg.webp">
+  <meta property="og:image:secure_url" content="https://timeslanguages.in/vkrealestate/css/hero-bg.webp">
+  <meta property="og:image:type" content="image/webp">
+  <meta property="og:image:width" content="1920">
+  <meta property="og:image:height" content="1072">
+  <meta property="og:image:alt" content="VK Real Estate Awards 2026">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="VK Real Estate Awards 2026 · Vijaya Karnataka">
+  <meta name="twitter:description" content="Karnataka's most authoritative recognition of real estate excellence. Nominations open across 54 categories for South India's developers, leaders and projects.">
+  <meta name="twitter:image" content="https://timeslanguages.in/vkrealestate/css/hero-bg.webp">
+  <meta name="twitter:image:alt" content="VK Real Estate Awards 2026">
   <meta name="google-site-verification" content="JYn_NFaOSK9Z4vPZe4n6l-aLTP_zoMrbmOEaUKy0l7o" />
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-6TLYWEPS3Y"></script>
@@ -42,12 +63,31 @@
   </script>
 
 
-  <!-- Fonts -->
+  <!-- Fonts (non-render-blocking) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Noto+Serif+Kannada:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&family=Poppins:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Serif+Kannada:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700&family=Poppins:wght@300;400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+Kannada:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700&family=Poppins:wght@300;400;500;600;700&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+Kannada:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700&family=Poppins:wght@300;400;500;600;700&display=swap"></noscript>
+
+  <!-- Preload LCP assets. Heavy hero background is preloaded only on fast
+       connections; on save-data / 2G it is skipped (see .slow-net in CSS). -->
+  <link rel="preload" as="image" href="css/vklogo.webp">
+  <script>
+    (function () {
+      var c = navigator.connection || {};
+      var slow = c.saveData === true || /(^|-)2g$/.test(c.effectiveType || '');
+      if (slow) {
+        document.documentElement.classList.add('slow-net');
+      } else {
+        var l = document.createElement('link');
+        l.rel = 'preload'; l.as = 'image';
+        l.href = 'css/hero-bg.webp';
+        l.setAttribute('fetchpriority', 'high');
+        document.head.appendChild(l);
+      }
+    })();
+  </script>
 
 
   <link rel="stylesheet" href="css/tokens.css">
@@ -55,6 +95,86 @@
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/sections.css">
   <link rel="stylesheet" href="css/responsive.css">
+  <!-- Structured data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://timeslanguages.in/vkrealestate/#organizer",
+        "name": "Vijaya Karnataka",
+        "url": "https://vijaykarnataka.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://vijaykarnataka.com/thumb/119164298/vijaykarnataka.jpg?width=474&resizemode=4"
+        },
+        "parentOrganization": {
+          "@type": "Organization",
+          "name": "Times Internet"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://timeslanguages.in/vkrealestate/#website",
+        "url": "https://timeslanguages.in/vkrealestate",
+        "name": "VK Real Estate Summit & Awards 2026",
+        "publisher": {
+          "@id": "https://timeslanguages.in/vkrealestate/#organizer"
+        },
+        "inLanguage": "en-IN"
+      },
+      {
+        "@type": "Event",
+        "name": "VK Real Estate Awards 2026",
+        "description": "Karnataka's most authoritative recognition of real estate excellence across 54 categories spanning developer, leadership, project and technology excellence. Nominations open.",
+        "startDate": "2026-09",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "location": {
+          "@type": "Place",
+          "name": "Bengaluru",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Bengaluru",
+            "addressRegion": "Karnataka",
+            "addressCountry": "IN"
+          }
+        },
+        "image": [
+          "https://timeslanguages.in/vkrealestate/css/hero-bg.webp"
+        ],
+        "url": "https://timeslanguages.in/vkrealestate/awards",
+        "organizer": {
+          "@id": "https://timeslanguages.in/vkrealestate/#organizer"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://timeslanguages.in/vkrealestate"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Summit",
+            "item": "https://timeslanguages.in/vkrealestate"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Awards",
+            "item": "https://timeslanguages.in/vkrealestate/awards"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body class="has-sticky-dock"
@@ -66,7 +186,7 @@
   <header class="nav" id="nav">
     <div class="nav-row">
       <div class="nav-logo nav-logo-ti">
-        <img src="https://timesinternet.in/assets/images/logo-blue-new.png" alt="Times Internet">
+        <img src="https://timesinternet.in/assets/images/logo-blue-new.png" alt="Times Internet" loading="lazy" decoding="async">
       </div>
 
       <nav class="nav-links" aria-label="Primary">
@@ -79,6 +199,7 @@
         <a href="#pricing">Fees</a>
         <a href="#judging">Process</a>
         <a href="#faq">FAQ</a>
+        <a href="#contact-us">Contact Us</a>
       </nav>
 
       <a href="#contact" class="nav-cta">Register now</a>
@@ -101,9 +222,11 @@
         <!-- Left Column -->
         <div class="hero-left-col">
           <!-- Main Title -->
-          <h1 class="poster-headline">
-            <span class="line"><span class="line-inner">VK Real Estate</span></span>
-            <span class="line"><span class="line-inner">Awards</span></span>
+          <h1 class="poster-headline stacked-headline">
+            <span class="line"><span class="line-inner logo-line"><img src="css/vklogo.webp" alt="VK" width="1000" height="212"
+                  fetchpriority="high" decoding="async" class="vk-hero-logo-stacked"></span></span>
+            <span class="line"><span class="line-inner text-line"><span>Real</span><span>Estate</span></span></span>
+            <span class="line"><span class="line-inner text-line"><span>Awards</span><span>2026</span></span></span>
           </h1>
 
           <!-- Subtitle Line -->
@@ -118,11 +241,11 @@
               <div class="hero-initiative-logos">
                 <div class="hero-initiative-logo">
                   <img src="https://vijaykarnataka.com/thumb/119164298/vijaykarnataka.jpg?width=474&resizemode=4"
-                    alt="Vijaya Karnataka">
+                    alt="Vijaya Karnataka" loading="lazy" decoding="async">
                 </div>
                 <span class="hero-initiative-sep" aria-hidden="true"></span>
                 <div class="hero-initiative-logo">
-                  <img src="https://static.langimg.com/photo/131008221.cms" alt="Times Languages Live">
+                  <img src="https://static.langimg.com/photo/131008221.cms" alt="Times Languages Live" loading="lazy" decoding="async">
                 </div>
               </div>
             </div>
@@ -131,7 +254,7 @@
               <span class="hero-process-advisor-label">Process Advisor</span>
               <div class="hero-process-advisor-card">
                 <div class="hero-process-advisor-logo">
-                  <img src="https://static.langimg.com/photo/128750468.cms" alt="Process Advisor - EY">
+                  <img src="https://static.langimg.com/photo/128750468.cms" alt="Process Advisor - EY" loading="lazy" decoding="async">
                 </div>
               </div>
             </div>
@@ -159,9 +282,10 @@
        ============================================================ -->
   <section class="overview" id="overview" data-section="overview">
     <div class="overview-container">
+      <h2 class="section-display overview-title">Celebrating the Builders of South India's Growth</h2>
       <div class="overview-grid">
         <div class="overview-headline">
-          <h2 class="section-display">Celebrating the Builders<br>of South India's Growth</h2>
+          <img src="css/awards-about.webp" class="overview-image" alt="Real Estate Awards 2026" width="900" height="900" loading="lazy" decoding="async">
         </div>
         <div class="overview-text">
           <p class="overview-lead">
@@ -172,7 +296,7 @@
             customer experience and long-term value deserve equal attention.
           </p>
           <p class="overview-body">
-            The Vijay Karnataka Real Estate Summit &amp; Awards has been created to recognise those who are raising
+            The Vijay Karnataka Real Estate Summit and Awards has been created to recognise those who are raising
             these standards. Marking Vijay Karnataka's first-ever real estate awards for South India, the platform
             brings together developers, architects, designers, consultants and allied businesses whose work is
             changing the region's built environment. It is designed not simply to reward success, but to encourage
@@ -195,10 +319,10 @@
 
   <section class="categories" id="categories" data-section="categories" data-band="dark">
     <div class="cat-header">
-      <h2 class="section-display">Every type of excellence.<br>One stage.</h2>
+      <h2 class="section-display">Award Categories</h2>
     </div>
 
-    <div class="categories-container">
+    <div class="categories-container js-tab-accordion">
       <div class="categories-grid">
         <aside class="cat-sidebar" role="tablist" aria-label="Award Pillars">
 
@@ -229,7 +353,7 @@
           <button class="cat-tab-button " role="tab" aria-selected="false" aria-controls="panel-technology"
             id="tab-technology">
             <span class="cat-tab-info">
-              <span class="cat-tab-title">Technology &amp; Solutions Awards</span>
+              <span class="cat-tab-title">Technology and Solutions Awards</span>
               <span class="cat-tab-count">7 Categories</span>
             </span>
           </button>
@@ -253,7 +377,7 @@
                 <button class="acc-header" aria-expanded="true" aria-controls="acc-body-1" id="acc-header-1">
                   <span class="acc-title">1. Developer of the Year</span>
                 </button>
-                <div class="acc-body" id="acc-body-1" aria-labelledby="acc-header-1" style=&#34;max-height: none;&#34;>
+                <div class="acc-body" id="acc-body-1" aria-labelledby="acc-header-1">
                   <div class="acc-content">
                     <div class="acc-content-box">
                       <div class="acc-meta-label">Description</div>
@@ -292,7 +416,7 @@
 
               <div class="acc-item ">
                 <button class="acc-header" aria-expanded="false" aria-controls="acc-body-3" id="acc-header-3">
-                  <span class="acc-title">3. ESG &amp; Climate Resilience Excellence</span>
+                  <span class="acc-title">3. ESG and Climate Resilience Excellence</span>
                 </button>
                 <div class="acc-body" id="acc-body-3" aria-labelledby="acc-header-3">
                   <div class="acc-content">
@@ -379,7 +503,7 @@
                     <div class="acc-content-box">
                       <div class="acc-meta-label">Description</div>
                       <p class="acc-desc">Recognizes a developer that has demonstrated exceptional performance in South
-                        India’s emerging real estate markets (Tier 2 &amp; Tier 3 cities), showcasing strong local
+                        India’s emerging real estate markets (Tier 2 and Tier 3 cities), showcasing strong local
                         market expertise, consistent project execution, high-quality development, and a meaningful
                         contribution to regional urban growth and infrastructure expansion.</p>
 
@@ -604,7 +728,7 @@
 
               <div class="acc-item ">
                 <button class="acc-header" aria-expanded="false" aria-controls="acc-body-17" id="acc-header-17">
-                  <span class="acc-title">2a. Excellence in Industrial &amp; Logistics Development - Completed
+                  <span class="acc-title">2a. Excellence in Industrial and Logistics Development - Completed
                     Projects</span>
                 </button>
                 <div class="acc-body" id="acc-body-17" aria-labelledby="acc-header-17">
@@ -624,7 +748,7 @@
 
               <div class="acc-item ">
                 <button class="acc-header" aria-expanded="false" aria-controls="acc-body-18" id="acc-header-18">
-                  <span class="acc-title">2b. Excellence in Industrial &amp; Logistics Development - Ongoing
+                  <span class="acc-title">2b. Excellence in Industrial and Logistics Development - Ongoing
                     Projects</span>
                 </button>
                 <div class="acc-body" id="acc-body-18" aria-labelledby="acc-header-18">
@@ -763,7 +887,7 @@
 
               <div class="acc-item ">
                 <button class="acc-header" aria-expanded="false" aria-controls="acc-body-25" id="acc-header-25">
-                  <span class="acc-title">6. Excellence in Landscape &amp; Urban Design</span>
+                  <span class="acc-title">6. Excellence in Landscape and Urban Design</span>
                 </button>
                 <div class="acc-body" id="acc-body-25" aria-labelledby="acc-header-25">
                   <div class="acc-content">
@@ -1219,7 +1343,7 @@
 
               <div class="acc-item ">
                 <button class="acc-header" aria-expanded="false" aria-controls="acc-body-55" id="acc-header-55">
-                  <span class="acc-title">19. Excellence in Property &amp; Facility Management</span>
+                  <span class="acc-title">19. Excellence in Property and Facility Management</span>
                 </button>
                 <div class="acc-body" id="acc-body-55" aria-labelledby="acc-header-55">
                   <div class="acc-content">
@@ -1241,7 +1365,7 @@
           <div class="cat-tab-panel " id="panel-technology" role="tabpanel" aria-labelledby="tab-technology">
             <div class="cat-panel-header">
               <div class="cat-panel-details">
-                <h3 class="cat-panel-title">Technology &amp; Solutions Awards</h3>
+                <h3 class="cat-panel-title">Technology and Solutions Awards</h3>
                 <p class="cat-panel-desc">Recognising platforms, campaigns, and technology-led solutions driving the
                   future of real estate.</p>
               </div>
@@ -1270,7 +1394,7 @@
 
               <div class="acc-item ">
                 <button class="acc-header" aria-expanded="false" aria-controls="acc-body-49" id="acc-header-49">
-                  <span class="acc-title">2. Excellence in Technology Adoption &amp; Innovation</span>
+                  <span class="acc-title">2. Excellence in Technology Adoption and Innovation</span>
                 </button>
                 <div class="acc-body" id="acc-body-49" aria-labelledby="acc-header-49">
                   <div class="acc-content">
@@ -1312,7 +1436,7 @@
 
               <div class="acc-item ">
                 <button class="acc-header" aria-expanded="false" aria-controls="acc-body-51" id="acc-header-51">
-                  <span class="acc-title">4. Excellence in Sales &amp; Marketing Campaign</span>
+                  <span class="acc-title">4. Excellence in Sales and Marketing Campaign</span>
                 </button>
                 <div class="acc-body" id="acc-body-51" aria-labelledby="acc-header-51">
                   <div class="acc-content">
@@ -1415,676 +1539,673 @@
         <h2 class="section-display">Eligibility Criteria</h2>
       </div>
 
-      <div class="eligibility-table-wrap">
-        <table class="eligibility-table">
-          <tbody>
-
-            <tr>
-
-              <td>
-                <span class="eligibility-kicker">General</span>
-                <span class="eligibility-label">South India Presence</span>
-
-                <p class="eligibility-copy">The participating organization should have its registered office or
-                  operational presence in South India and must have a minimum of 5 completed years of business
-                  operations in the region as of March 31, 2026. This applies to all categories except emerging
-                  categories.</p>
-
-
-              </td>
-
-              <td>
-                <span class="eligibility-kicker">General</span>
-                <span class="eligibility-label">Active Real Estate Participation</span>
-
-                <p class="eligibility-copy">The participating organization must have at least one completed or ongoing
-                  real estate project in South India as of March 31, 2026, demonstrating active participation in the
-                  sector.</p>
-
-
-              </td>
-
-
-            </tr>
-
-            <tr>
-
-              <td>
-                <span class="eligibility-kicker">General</span>
-                <span class="eligibility-label">Assessment Window</span>
-
-                <p class="eligibility-copy">All projects, initiatives, or campaigns submitted for evaluation must fall
-                  within the defined assessment window for the 2026 awards cycle.</p>
-
-
-                <ul class="eligibility-list">
-
-                  <li>Completed projects must be operational on or before March 31, 2026.</li>
-
-                  <li>Ongoing projects or initiatives must have commenced on or after April 1, 2024.</li>
-
-                </ul>
-
-              </td>
-
-              <td>
-                <span class="eligibility-kicker">General</span>
-                <span class="eligibility-label">Regulatory Compliance</span>
-
-                <p class="eligibility-copy">The participating organization must be compliant with applicable regulatory
-                  requirements, including registration under the Real Estate (Regulation and Development) Act, 2016
-                  (RERA), wherever applicable.</p>
-
-
-              </td>
-
-
-            </tr>
-
-            <tr>
-
-              <td>
-                <span class="eligibility-kicker">Company Awards</span>
-                <span class="eligibility-label">Developer of the Year</span>
-
-
-                <ul class="eligibility-list">
-
-                  <li>The organization must have a minimum of 10 years of real estate development experience in South
-                    India as of March 31, 2026.</li>
-
-                  <li>The organization must have delivered at least 5 completed real estate projects, with a minimum of
-                    2 projects delivered within the last 3 years.</li>
-
-                </ul>
-
-              </td>
-
-              <td>
-                <span class="eligibility-kicker">Company Awards</span>
-                <span class="eligibility-label">Emerging Developer of the Year</span>
-
-
-                <ul class="eligibility-list">
-
-                  <li>The participating organization must have been incorporated within the last 10 years as of March
-                    31, 2026.</li>
-
-                  <li>The organization must have at least 2 completed projects.</li>
-
-                </ul>
-
-              </td>
-
-
-            </tr>
-
-            <tr>
-
-              <td>
-                <span class="eligibility-kicker">Company Awards</span>
-                <span class="eligibility-label">ESG &amp; Climate Resilience Excellence</span>
-
-
-                <ul class="eligibility-list">
-
-                  <li>The participating organization must have a defined ESG framework or policy in place.</li>
-
-                  <li>The organization must demonstrate implementation of sustainability or climate resilience
-                    initiatives within the defined timeframe.</li>
-
-                </ul>
-
-              </td>
-
-              <td>
-                <span class="eligibility-kicker">Project Awards</span>
-                <span class="eligibility-label">Project Awards Segment Rules</span>
-
-
-                <ul class="eligibility-list">
-
-                  <li>The submitted project must be located in South India.</li>
-
-                  <li>The project must be submitted either under Completed or Ongoing classification, and evaluation
-                    will be conducted accordingly.</li>
-
-                </ul>
-
-              </td>
-
-
-            </tr>
-
-            <tr>
-
-              <td>
-                <span class="eligibility-kicker">Project Awards</span>
-                <span class="eligibility-label">Integrated Development (Township / Mixed Use)</span>
-
-
-                <ul class="eligibility-list">
-
-                  <li>The project must have a minimum land parcel of 25 acres.</li>
-
-                  <li>The project must include at least 3 distinct asset classes such as residential, commercial, or
-                    retail.</li>
-
-                </ul>
-
-              </td>
-
-              <td>
-                <span class="eligibility-kicker">Project Awards</span>
-                <span class="eligibility-label">Industrial &amp; Logistics Development</span>
-
-
-                <ul class="eligibility-list">
-
-                  <li>The project must be designed for logistics, warehousing, or industrial use.</li>
-
-                  <li>The project must demonstrate tenant occupancy or leasing activity for completed projects.</li>
-
-                </ul>
-
-              </td>
-
-
-            </tr>
-
-            <tr>
-
-              <td>
-                <span class="eligibility-kicker">Project Awards</span>
-                <span class="eligibility-label">Social Infrastructure Development</span>
-
-
-                <ul class="eligibility-list">
-
-                  <li>The project must fall under healthcare, education, or senior living infrastructure.</li>
-
-                  <li>The project must demonstrate operational functionality and end-user utilization.</li>
-
-                </ul>
-
-              </td>
-
-              <td>
-                <span class="eligibility-kicker">Project Awards</span>
-                <span class="eligibility-label">PPP Infrastructure</span>
-
-
-                <ul class="eligibility-list">
-
-                  <li>The project must be executed under a formal public-private partnership arrangement with a
-                    government authority.</li>
-
-                </ul>
-
-              </td>
-
-
-            </tr>
-
-            <tr>
-
-              <td>
-                <span class="eligibility-kicker">Project Awards</span>
-                <span class="eligibility-label">Green Project of the Year</span>
-
-
-                <ul class="eligibility-list">
-
-                  <li>The project must have obtained or applied for a recognized green certification such as IGBC, LEED,
-                    or equivalent.</li>
-
-                </ul>
-
-              </td>
-
-              <td>
-                <span class="eligibility-kicker">Project Awards</span>
-                <span class="eligibility-label">Smart Development of the Year</span>
-
-
-                <ul class="eligibility-list">
-
-                  <li>The project must demonstrate implementation of smart technologies, including IoT systems,
-                    automation, or digital infrastructure.</li>
-
-                </ul>
-
-              </td>
-
-
-            </tr>
-
-            <tr>
-
-              <td>
-                <span class="eligibility-kicker">Project Awards</span>
-                <span class="eligibility-label">Residential Project of the Year</span>
-
-
-                <ul class="eligibility-list">
-
-                  <li>The project must be classified as a residential development with defined housing units and
-                    amenities.</li>
-
-                </ul>
-
-              </td>
-
-              <td>
-                <span class="eligibility-kicker">Project Awards</span>
-                <span class="eligibility-label">Luxury Residential Project of the Year</span>
-
-
-                <ul class="eligibility-list">
-
-                  <li>The project must be positioned within the premium or luxury housing segment, supported by
-                    high-value offerings and amenities.</li>
-
-                  <li>The project must be located in a prime, premium, or emerging high-value area within the respective
-                    city.</li>
-
-                  <li>Minimum unit price must be INR 3 crore and above.</li>
-
-                </ul>
-
-              </td>
-
-
-            </tr>
-
-            <tr>
-
-              <td>
-                <span class="eligibility-kicker">Project Awards</span>
-                <span class="eligibility-label">Affordable Housing Project of the Year</span>
-
-
-                <ul class="eligibility-list">
-
-                  <li>The project must have a maximum unit price not exceeding INR 75 lakh as of March 31, 2026.</li>
-
-                </ul>
-
-              </td>
-
-              <td>
-                <span class="eligibility-kicker">Project Awards</span>
-                <span class="eligibility-label">Villa of the Year</span>
-
-
-                <ul class="eligibility-list">
-
-                  <li>The project must consist of independent villa units or low-density housing formats.</li>
-
-                  <li>The project must have a minimum of 20 units.</li>
-
-                </ul>
-
-              </td>
-
-
-            </tr>
-
-            <tr>
-
-              <td>
-                <span class="eligibility-kicker">Project Awards</span>
-                <span class="eligibility-label">Commercial Project of the Year (Office)</span>
-
-
-                <ul class="eligibility-list">
-
-                  <li>The project must be developed as a commercial office asset.</li>
-
-                  <li>The project must have a minimum built-up or leasable area of 1,00,000 sq. ft.</li>
-
-                  <li>The project must demonstrate leasing activity, tenant occupancy, or income generation.</li>
-
-                </ul>
-
-              </td>
-
-              <td>
-                <span class="eligibility-kicker">Project Awards</span>
-                <span class="eligibility-label">Retail Project of the Year</span>
-
-
-                <ul class="eligibility-list">
-
-                  <li>The project must be developed as a retail asset such as a mall, high street, or retail complex.
-                  </li>
-
-                  <li>The project must demonstrate tenant mix or operational activity for the completed category.</li>
-
-                </ul>
-
-              </td>
-
-
-            </tr>
-
-            <tr>
-
-              <td>
-                <span class="eligibility-kicker">Project Awards</span>
-                <span class="eligibility-label">Redevelopment Project of the Year</span>
-
-
-                <ul class="eligibility-list">
-
-                  <li>The nominated project must involve redevelopment or transformation of an existing built asset or
-                    land parcel.</li>
-
-                </ul>
-
-              </td>
-
-              <td>
-                <span class="eligibility-kicker">Individual Awards</span>
-                <span class="eligibility-label">Architect of the Year</span>
-
-
-                <ul class="eligibility-list">
-
-                  <li>The nominee must have a minimum of 8 years of professional experience in architecture as of March
-                    31, 2026.</li>
-
-                  <li>The nominee must have been involved in the design and execution of at least 5 completed projects,
-                    with a minimum of 2 projects completed within the last 3 years.</li>
-
-                  <li>The nominee must be actively practicing in South India, with projects located within the region.
-                  </li>
-
-                </ul>
-
-              </td>
-
-
-            </tr>
-
-            <tr>
-
-              <td>
-                <span class="eligibility-kicker">Company Awards</span>
-                <span class="eligibility-label">Architectural Firm of the Year</span>
-
-
-                <ul class="eligibility-list">
-
-                  <li>The firm must have completed at least 5 projects.</li>
-
-                  <li>The firm must demonstrate experience across multiple asset classes or large-scale developments.
-                  </li>
-
-                </ul>
-
-              </td>
-
-              <td>
-                <span class="eligibility-kicker">Individual Awards</span>
-                <span class="eligibility-label">Business Leader of the Year</span>
-
-
-                <ul class="eligibility-list">
-
-                  <li>The nominee must have a minimum of 10 years of experience in the real estate sector as of March
-                    31, 2026.</li>
-
-                  <li>The nominee must have held a leadership role for at least 2 years in the current organization.
-                  </li>
-
-                  <li>The nominee must currently hold a leadership role such as CXO, Director, VP, or equivalent.</li>
-
-                </ul>
-
-              </td>
-
-
-            </tr>
-
-            <tr>
-
-              <td>
-                <span class="eligibility-kicker">Individual Awards</span>
-                <span class="eligibility-label">Woman Leader of the Year</span>
-
-
-                <ul class="eligibility-list">
-
-                  <li>The nominee must be a female and have a minimum of 10 years of professional experience in the real
-                    estate sector as of March 31, 2026.</li>
-
-                  <li>The nominee must have held a leadership role for at least 2 years in the current organization.
-                  </li>
-
-                  <li>The nominee must currently hold a leadership role such as CXO, Director, VP, or equivalent.</li>
-
-                </ul>
-
-              </td>
-
-              <td>
-                <span class="eligibility-kicker">Individual Awards</span>
-                <span class="eligibility-label">Emerging Leader of the Year</span>
-
-
-                <ul class="eligibility-list">
-
-                  <li>The nominee must have up to 10 years of professional experience in the real estate sector as of
-                    March 31, 2026.</li>
-
-                  <li>The nominee must have a minimum of 1 year of tenure in the current organization as of March 31,
-                    2026.</li>
-
-                </ul>
-
-              </td>
-
-
-            </tr>
-
-            <tr>
-
-              <td>
-                <span class="eligibility-kicker">Individual Awards</span>
-                <span class="eligibility-label">CMO / Marketer of the Year</span>
-
-
-                <ul class="eligibility-list">
-
-                  <li>The nominee must have a minimum of 10 years of professional experience in real estate marketing.
-                  </li>
-
-                  <li>The nominee must have held a leadership role for at least 2 years in the current organization.
-                  </li>
-
-                  <li>The nominee must currently hold a senior marketing leadership role such as CMO, Head of Marketing,
-                    Marketing Director, or equivalent.</li>
-
-                </ul>
-
-              </td>
-
-              <td>
-                <span class="eligibility-kicker">Company Awards</span>
-                <span class="eligibility-label">Real Estate Agency of the Year</span>
-
-
-                <ul class="eligibility-list">
-
-                  <li>The agency must have closed a minimum of 50 property transactions in the last 3 years as of March
-                    31, 2026, across residential and/or commercial segments.</li>
-
-                </ul>
-
-              </td>
-
-
-            </tr>
-
-            <tr>
-
-              <td>
-                <span class="eligibility-kicker">Company Awards</span>
-                <span class="eligibility-label">Residential Sales Performance</span>
-
-
-                <ul class="eligibility-list">
-
-                  <li>The participating organization must have achieved a minimum of INR 100 crore and above residential
-                    sales value or volume threshold over FY 2025-26 as of March 31, 2026.</li>
-
-                </ul>
-
-              </td>
-
-              <td>
-                <span class="eligibility-kicker">Company Awards</span>
-                <span class="eligibility-label">Boutique / Niche Developer of the Year</span>
-
-
-                <ul class="eligibility-list">
-
-                  <li>The participating organization must have at least 1 completed project within a specific niche
-                    segment as of March 31, 2026.</li>
-
-                  <li>The total property portfolio size should not exceed 5 completed projects as of March 31, 2026.
-                  </li>
-
-                </ul>
-
-              </td>
-
-
-            </tr>
-
-            <tr>
-
-              <td>
-                <span class="eligibility-kicker">Project Awards</span>
-                <span class="eligibility-label">Ultra Luxury Project (Residential / Commercial)</span>
-
-
-                <ul class="eligibility-list">
-
-                  <li>The project must be positioned in the ultra-luxury segment within either residential or commercial
-                    real estate.</li>
-
-                  <li>The project must be located in a prime, premium, or high-value micro-market or business district.
-                  </li>
-
-                  <li>The project must demonstrate exceptional design, high-end specifications, exclusivity, and
-                    superior quality of development.</li>
-
-                  <li>Residential: minimum unit price of INR 10 crore and above.</li>
-
-                  <li>Commercial: presence of marquee tenants, high-value transactions, or Grade A+ asset positioning.
-                  </li>
-
-                </ul>
-
-              </td>
-
-              <td>
-                <span class="eligibility-kicker">Technology Awards</span>
-                <span class="eligibility-label">Real Estate Website of the Year</span>
-
-
-                <ul class="eligibility-list">
-
-                  <li>The website must be owned and operated by a real estate company or agency and active as of March
-                    31, 2026.</li>
-
-                  <li>The platform must demonstrate measurable user engagement such as traffic, lead generation, or
-                    conversion metrics.</li>
-
-                </ul>
-
-              </td>
-
-
-            </tr>
-
-            <tr>
-
-              <td>
-                <span class="eligibility-kicker">Company Awards</span>
-                <span class="eligibility-label">Emerging Markets Developer of the Year</span>
-
-
-                <ul class="eligibility-list">
-
-                  <li>The participating organization must have a minimum of 7 years of real estate development
-                    experience in South India as of March 31, 2026.</li>
-
-                  <li>The organization must have delivered at least 3 completed real estate projects in Tier 2 and Tier
-                    3 cities, with a minimum of 2 projects delivered within the last 3 years.</li>
-
-                  <li>At least 70% of the organization’s project portfolio by number of projects or revenue must be
-                    concentrated in Tier 2 and Tier 3 markets in South India.</li>
-
-                </ul>
-
-              </td>
-
-              <td>
-                <span class="eligibility-kicker">Project Awards</span>
-                <span class="eligibility-label">Project of the Year</span>
-
-
-                <ul class="eligibility-list">
-
-                  <li>The project must be completed and operational on or before March 31, 2026.</li>
-
-                  <li>The project may belong to any asset class such as residential, commercial, mixed-use, or retail.
-                  </li>
-
-                  <li>The project must demonstrate excellence across design, execution, sustainability, innovation, and
-                    market success.</li>
-
-                  <li>The project must have achieved strong market recognition, occupancy, or user adoption.</li>
-
-                </ul>
-
-              </td>
-
-
-            </tr>
-
-            <tr>
-
-              <td>
-                <span class="eligibility-kicker">Project Awards</span>
-                <span class="eligibility-label">Excellence in Design Project</span>
-
-
-                <ul class="eligibility-list">
-
-                  <li>The project must fall under either architecture or interior design within residential or
-                    commercial real estate.</li>
-
-                  <li>Residential entries should show premium positioning, high-value units, or strong design-led
-                    differentiation.</li>
-
-                  <li>Commercial entries should show Grade A or Grade A+ specifications, quality occupiers or tenants,
-                    or enhanced workplace and environmental experience.</li>
-
-                </ul>
-
-              </td>
-
-
-              <td class="eligibility-empty"></td>
-
-            </tr>
-
-          </tbody>
-        </table>
+      <div class="categories-container js-tab-accordion">
+        <div class="categories-grid">
+          <aside class="cat-sidebar" role="tablist" aria-label="Eligibility Groups">
+
+          <button class="cat-tab-button active" role="tab" aria-selected="true" aria-controls="elig-panel-general" id="elig-tab-general">
+            <span class="cat-tab-info">
+              <span class="cat-tab-title">General</span>
+              <span class="cat-tab-count">4 Criteria</span>
+            </span>
+          </button>
+
+          <button class="cat-tab-button" role="tab" aria-selected="false" aria-controls="elig-panel-company-awards" id="elig-tab-company-awards">
+            <span class="cat-tab-info">
+              <span class="cat-tab-title">Company Awards</span>
+              <span class="cat-tab-count">8 Criteria</span>
+            </span>
+          </button>
+
+          <button class="cat-tab-button" role="tab" aria-selected="false" aria-controls="elig-panel-project-awards" id="elig-tab-project-awards">
+            <span class="cat-tab-info">
+              <span class="cat-tab-title">Project Awards</span>
+              <span class="cat-tab-count">17 Criteria</span>
+            </span>
+          </button>
+
+          <button class="cat-tab-button" role="tab" aria-selected="false" aria-controls="elig-panel-individual-awards" id="elig-tab-individual-awards">
+            <span class="cat-tab-info">
+              <span class="cat-tab-title">Individual Awards</span>
+              <span class="cat-tab-count">5 Criteria</span>
+            </span>
+          </button>
+
+          <button class="cat-tab-button" role="tab" aria-selected="false" aria-controls="elig-panel-technology-awards" id="elig-tab-technology-awards">
+            <span class="cat-tab-info">
+              <span class="cat-tab-title">Technology Awards</span>
+              <span class="cat-tab-count">1 Criteria</span>
+            </span>
+          </button>
+
+          </aside>
+
+          <main class="cat-content">
+
+          <div class="cat-tab-panel active" id="elig-panel-general" role="tabpanel" aria-labelledby="elig-tab-general">
+            <div class="cat-panel-header">
+              <div class="cat-panel-details">
+                <h3 class="cat-panel-title">General</h3>
+                <p class="cat-panel-desc">Baseline requirements every participating organisation must meet across all categories.</p>
+              </div>
+            </div>
+
+            <div class="cat-accordion">
+
+              <div class="acc-item active">
+                <button class="acc-header" aria-expanded="true" aria-controls="elig-body-1" id="elig-header-1">
+                  <span class="acc-title">South India Presence</span>
+                </button>
+                <div class="acc-body" id="elig-body-1" aria-labelledby="elig-header-1">
+                  <div class="acc-content">
+                    <div class="acc-content-box">
+                      <p class="acc-desc">The participating organization should have its registered office or operational presence in South India and must have a minimum of 5 completed years of business operations in the region as of March 31, 2026. This applies to all categories except emerging categories.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="acc-item">
+                <button class="acc-header" aria-expanded="false" aria-controls="elig-body-2" id="elig-header-2">
+                  <span class="acc-title">Active Real Estate Participation</span>
+                </button>
+                <div class="acc-body" id="elig-body-2" aria-labelledby="elig-header-2">
+                  <div class="acc-content">
+                    <div class="acc-content-box">
+                      <p class="acc-desc">The participating organization must have at least one completed or ongoing real estate project in South India as of March 31, 2026, demonstrating active participation in the sector.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="acc-item">
+                <button class="acc-header" aria-expanded="false" aria-controls="elig-body-3" id="elig-header-3">
+                  <span class="acc-title">Assessment Window</span>
+                </button>
+                <div class="acc-body" id="elig-body-3" aria-labelledby="elig-header-3">
+                  <div class="acc-content">
+                    <div class="acc-content-box">
+                      <p class="acc-desc">All projects, initiatives, or campaigns submitted for evaluation must fall within the defined assessment window for the 2026 awards cycle.</p>
+                      <ul class="acc-list">
+                        <li>Completed projects must be operational on or before March 31, 2026.</li>
+                        <li>Ongoing projects or initiatives must have commenced on or after April 1, 2024.</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="acc-item">
+                <button class="acc-header" aria-expanded="false" aria-controls="elig-body-4" id="elig-header-4">
+                  <span class="acc-title">Regulatory Compliance</span>
+                </button>
+                <div class="acc-body" id="elig-body-4" aria-labelledby="elig-header-4">
+                  <div class="acc-content">
+                    <div class="acc-content-box">
+                      <p class="acc-desc">The participating organization must be compliant with applicable regulatory requirements, including registration under the Real Estate (Regulation and Development) Act, 2016 (RERA), wherever applicable.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="cat-tab-panel" id="elig-panel-company-awards" role="tabpanel" aria-labelledby="elig-tab-company-awards">
+            <div class="cat-panel-header">
+              <div class="cat-panel-details">
+                <h3 class="cat-panel-title">Company Awards</h3>
+                <p class="cat-panel-desc">Criteria specific to company and developer-level recognitions.</p>
+              </div>
+            </div>
+
+            <div class="cat-accordion">
+
+              <div class="acc-item active">
+                <button class="acc-header" aria-expanded="true" aria-controls="elig-body-5" id="elig-header-5">
+                  <span class="acc-title">Developer of the Year</span>
+                </button>
+                <div class="acc-body" id="elig-body-5" aria-labelledby="elig-header-5">
+                  <div class="acc-content">
+                    <div class="acc-content-box">
+                      <ul class="acc-list">
+                        <li>The organization must have a minimum of 10 years of real estate development experience in South India as of March 31, 2026.</li>
+                        <li>The organization must have delivered at least 5 completed real estate projects, with a minimum of 2 projects delivered within the last 3 years.</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="acc-item">
+                <button class="acc-header" aria-expanded="false" aria-controls="elig-body-6" id="elig-header-6">
+                  <span class="acc-title">Emerging Developer of the Year</span>
+                </button>
+                <div class="acc-body" id="elig-body-6" aria-labelledby="elig-header-6">
+                  <div class="acc-content">
+                    <div class="acc-content-box">
+                      <ul class="acc-list">
+                        <li>The participating organization must have been incorporated within the last 10 years as of March 31, 2026.</li>
+                        <li>The organization must have at least 2 completed projects.</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="acc-item">
+                <button class="acc-header" aria-expanded="false" aria-controls="elig-body-7" id="elig-header-7">
+                  <span class="acc-title">ESG and Climate Resilience Excellence</span>
+                </button>
+                <div class="acc-body" id="elig-body-7" aria-labelledby="elig-header-7">
+                  <div class="acc-content">
+                    <div class="acc-content-box">
+                      <ul class="acc-list">
+                        <li>The participating organization must have a defined ESG framework or policy in place.</li>
+                        <li>The organization must demonstrate implementation of sustainability or climate resilience initiatives within the defined timeframe.</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="acc-item">
+                <button class="acc-header" aria-expanded="false" aria-controls="elig-body-8" id="elig-header-8">
+                  <span class="acc-title">Architectural Firm of the Year</span>
+                </button>
+                <div class="acc-body" id="elig-body-8" aria-labelledby="elig-header-8">
+                  <div class="acc-content">
+                    <div class="acc-content-box">
+                      <ul class="acc-list">
+                        <li>The firm must have completed at least 5 projects.</li>
+                        <li>The firm must demonstrate experience across multiple asset classes or large-scale developments.</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="acc-item">
+                <button class="acc-header" aria-expanded="false" aria-controls="elig-body-9" id="elig-header-9">
+                  <span class="acc-title">Real Estate Agency of the Year</span>
+                </button>
+                <div class="acc-body" id="elig-body-9" aria-labelledby="elig-header-9">
+                  <div class="acc-content">
+                    <div class="acc-content-box">
+                      <ul class="acc-list">
+                        <li>The agency must have closed a minimum of 50 property transactions in the last 3 years as of March 31, 2026, across residential and/or commercial segments.</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="acc-item">
+                <button class="acc-header" aria-expanded="false" aria-controls="elig-body-10" id="elig-header-10">
+                  <span class="acc-title">Residential Sales Performance</span>
+                </button>
+                <div class="acc-body" id="elig-body-10" aria-labelledby="elig-header-10">
+                  <div class="acc-content">
+                    <div class="acc-content-box">
+                      <ul class="acc-list">
+                        <li>The participating organization must have achieved a minimum of INR 100 crore and above residential sales value or volume threshold over FY 2025-26 as of March 31, 2026.</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="acc-item">
+                <button class="acc-header" aria-expanded="false" aria-controls="elig-body-11" id="elig-header-11">
+                  <span class="acc-title">Boutique / Niche Developer of the Year</span>
+                </button>
+                <div class="acc-body" id="elig-body-11" aria-labelledby="elig-header-11">
+                  <div class="acc-content">
+                    <div class="acc-content-box">
+                      <ul class="acc-list">
+                        <li>The participating organization must have at least 1 completed project within a specific niche segment as of March 31, 2026.</li>
+                        <li>The total property portfolio size should not exceed 5 completed projects as of March 31, 2026.</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="acc-item">
+                <button class="acc-header" aria-expanded="false" aria-controls="elig-body-12" id="elig-header-12">
+                  <span class="acc-title">Emerging Markets Developer of the Year</span>
+                </button>
+                <div class="acc-body" id="elig-body-12" aria-labelledby="elig-header-12">
+                  <div class="acc-content">
+                    <div class="acc-content-box">
+                      <ul class="acc-list">
+                        <li>The participating organization must have a minimum of 7 years of real estate development experience in South India as of March 31, 2026.</li>
+                        <li>The organization must have delivered at least 3 completed real estate projects in Tier 2 and Tier 3 cities, with a minimum of 2 projects delivered within the last 3 years.</li>
+                        <li>At least 70% of the organization’s project portfolio by number of projects or revenue must be concentrated in Tier 2 and Tier 3 markets in South India.</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="cat-tab-panel" id="elig-panel-project-awards" role="tabpanel" aria-labelledby="elig-tab-project-awards">
+            <div class="cat-panel-header">
+              <div class="cat-panel-details">
+                <h3 class="cat-panel-title">Project Awards</h3>
+                <p class="cat-panel-desc">Criteria applied to individual project and development submissions.</p>
+              </div>
+            </div>
+
+            <div class="cat-accordion">
+
+              <div class="acc-item active">
+                <button class="acc-header" aria-expanded="true" aria-controls="elig-body-13" id="elig-header-13">
+                  <span class="acc-title">Project Awards Segment Rules</span>
+                </button>
+                <div class="acc-body" id="elig-body-13" aria-labelledby="elig-header-13">
+                  <div class="acc-content">
+                    <div class="acc-content-box">
+                      <ul class="acc-list">
+                        <li>The submitted project must be located in South India.</li>
+                        <li>The project must be submitted either under Completed or Ongoing classification, and evaluation will be conducted accordingly.</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="acc-item">
+                <button class="acc-header" aria-expanded="false" aria-controls="elig-body-14" id="elig-header-14">
+                  <span class="acc-title">Integrated Development (Township / Mixed Use)</span>
+                </button>
+                <div class="acc-body" id="elig-body-14" aria-labelledby="elig-header-14">
+                  <div class="acc-content">
+                    <div class="acc-content-box">
+                      <ul class="acc-list">
+                        <li>The project must have a minimum land parcel of 25 acres.</li>
+                        <li>The project must include at least 3 distinct asset classes such as residential, commercial, or retail.</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="acc-item">
+                <button class="acc-header" aria-expanded="false" aria-controls="elig-body-15" id="elig-header-15">
+                  <span class="acc-title">Industrial and Logistics Development</span>
+                </button>
+                <div class="acc-body" id="elig-body-15" aria-labelledby="elig-header-15">
+                  <div class="acc-content">
+                    <div class="acc-content-box">
+                      <ul class="acc-list">
+                        <li>The project must be designed for logistics, warehousing, or industrial use.</li>
+                        <li>The project must demonstrate tenant occupancy or leasing activity for completed projects.</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="acc-item">
+                <button class="acc-header" aria-expanded="false" aria-controls="elig-body-16" id="elig-header-16">
+                  <span class="acc-title">Social Infrastructure Development</span>
+                </button>
+                <div class="acc-body" id="elig-body-16" aria-labelledby="elig-header-16">
+                  <div class="acc-content">
+                    <div class="acc-content-box">
+                      <ul class="acc-list">
+                        <li>The project must fall under healthcare, education, or senior living infrastructure.</li>
+                        <li>The project must demonstrate operational functionality and end-user utilization.</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="acc-item">
+                <button class="acc-header" aria-expanded="false" aria-controls="elig-body-17" id="elig-header-17">
+                  <span class="acc-title">PPP Infrastructure</span>
+                </button>
+                <div class="acc-body" id="elig-body-17" aria-labelledby="elig-header-17">
+                  <div class="acc-content">
+                    <div class="acc-content-box">
+                      <ul class="acc-list">
+                        <li>The project must be executed under a formal public-private partnership arrangement with a government authority.</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="acc-item">
+                <button class="acc-header" aria-expanded="false" aria-controls="elig-body-18" id="elig-header-18">
+                  <span class="acc-title">Green Project of the Year</span>
+                </button>
+                <div class="acc-body" id="elig-body-18" aria-labelledby="elig-header-18">
+                  <div class="acc-content">
+                    <div class="acc-content-box">
+                      <ul class="acc-list">
+                        <li>The project must have obtained or applied for a recognized green certification such as IGBC, LEED, or equivalent.</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="acc-item">
+                <button class="acc-header" aria-expanded="false" aria-controls="elig-body-19" id="elig-header-19">
+                  <span class="acc-title">Smart Development of the Year</span>
+                </button>
+                <div class="acc-body" id="elig-body-19" aria-labelledby="elig-header-19">
+                  <div class="acc-content">
+                    <div class="acc-content-box">
+                      <ul class="acc-list">
+                        <li>The project must demonstrate implementation of smart technologies, including IoT systems, automation, or digital infrastructure.</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="acc-item">
+                <button class="acc-header" aria-expanded="false" aria-controls="elig-body-20" id="elig-header-20">
+                  <span class="acc-title">Residential Project of the Year</span>
+                </button>
+                <div class="acc-body" id="elig-body-20" aria-labelledby="elig-header-20">
+                  <div class="acc-content">
+                    <div class="acc-content-box">
+                      <ul class="acc-list">
+                        <li>The project must be classified as a residential development with defined housing units and amenities.</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="acc-item">
+                <button class="acc-header" aria-expanded="false" aria-controls="elig-body-21" id="elig-header-21">
+                  <span class="acc-title">Luxury Residential Project of the Year</span>
+                </button>
+                <div class="acc-body" id="elig-body-21" aria-labelledby="elig-header-21">
+                  <div class="acc-content">
+                    <div class="acc-content-box">
+                      <ul class="acc-list">
+                        <li>The project must be positioned within the premium or luxury housing segment, supported by high-value offerings and amenities.</li>
+                        <li>The project must be located in a prime, premium, or emerging high-value area within the respective city.</li>
+                        <li>Minimum unit price must be INR 3 crore and above.</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="acc-item">
+                <button class="acc-header" aria-expanded="false" aria-controls="elig-body-22" id="elig-header-22">
+                  <span class="acc-title">Affordable Housing Project of the Year</span>
+                </button>
+                <div class="acc-body" id="elig-body-22" aria-labelledby="elig-header-22">
+                  <div class="acc-content">
+                    <div class="acc-content-box">
+                      <ul class="acc-list">
+                        <li>The project must have a maximum unit price not exceeding INR 75 lakh as of March 31, 2026.</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="acc-item">
+                <button class="acc-header" aria-expanded="false" aria-controls="elig-body-23" id="elig-header-23">
+                  <span class="acc-title">Villa of the Year</span>
+                </button>
+                <div class="acc-body" id="elig-body-23" aria-labelledby="elig-header-23">
+                  <div class="acc-content">
+                    <div class="acc-content-box">
+                      <ul class="acc-list">
+                        <li>The project must consist of independent villa units or low-density housing formats.</li>
+                        <li>The project must have a minimum of 20 units.</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="acc-item">
+                <button class="acc-header" aria-expanded="false" aria-controls="elig-body-24" id="elig-header-24">
+                  <span class="acc-title">Commercial Project of the Year (Office)</span>
+                </button>
+                <div class="acc-body" id="elig-body-24" aria-labelledby="elig-header-24">
+                  <div class="acc-content">
+                    <div class="acc-content-box">
+                      <ul class="acc-list">
+                        <li>The project must be developed as a commercial office asset.</li>
+                        <li>The project must have a minimum built-up or leasable area of 1,00,000 sq. ft.</li>
+                        <li>The project must demonstrate leasing activity, tenant occupancy, or income generation.</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="acc-item">
+                <button class="acc-header" aria-expanded="false" aria-controls="elig-body-25" id="elig-header-25">
+                  <span class="acc-title">Retail Project of the Year</span>
+                </button>
+                <div class="acc-body" id="elig-body-25" aria-labelledby="elig-header-25">
+                  <div class="acc-content">
+                    <div class="acc-content-box">
+                      <ul class="acc-list">
+                        <li>The project must be developed as a retail asset such as a mall, high street, or retail complex.</li>
+                        <li>The project must demonstrate tenant mix or operational activity for the completed category.</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="acc-item">
+                <button class="acc-header" aria-expanded="false" aria-controls="elig-body-26" id="elig-header-26">
+                  <span class="acc-title">Redevelopment Project of the Year</span>
+                </button>
+                <div class="acc-body" id="elig-body-26" aria-labelledby="elig-header-26">
+                  <div class="acc-content">
+                    <div class="acc-content-box">
+                      <ul class="acc-list">
+                        <li>The nominated project must involve redevelopment or transformation of an existing built asset or land parcel.</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="acc-item">
+                <button class="acc-header" aria-expanded="false" aria-controls="elig-body-27" id="elig-header-27">
+                  <span class="acc-title">Ultra Luxury Project (Residential / Commercial)</span>
+                </button>
+                <div class="acc-body" id="elig-body-27" aria-labelledby="elig-header-27">
+                  <div class="acc-content">
+                    <div class="acc-content-box">
+                      <ul class="acc-list">
+                        <li>The project must be positioned in the ultra-luxury segment within either residential or commercial real estate.</li>
+                        <li>The project must be located in a prime, premium, or high-value micro-market or business district.</li>
+                        <li>The project must demonstrate exceptional design, high-end specifications, exclusivity, and superior quality of development.</li>
+                        <li>Residential: minimum unit price of INR 10 crore and above.</li>
+                        <li>Commercial: presence of marquee tenants, high-value transactions, or Grade A+ asset positioning.</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="acc-item">
+                <button class="acc-header" aria-expanded="false" aria-controls="elig-body-28" id="elig-header-28">
+                  <span class="acc-title">Project of the Year</span>
+                </button>
+                <div class="acc-body" id="elig-body-28" aria-labelledby="elig-header-28">
+                  <div class="acc-content">
+                    <div class="acc-content-box">
+                      <ul class="acc-list">
+                        <li>The project must be completed and operational on or before March 31, 2026.</li>
+                        <li>The project may belong to any asset class such as residential, commercial, mixed-use, or retail.</li>
+                        <li>The project must demonstrate excellence across design, execution, sustainability, innovation, and market success.</li>
+                        <li>The project must have achieved strong market recognition, occupancy, or user adoption.</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="acc-item">
+                <button class="acc-header" aria-expanded="false" aria-controls="elig-body-29" id="elig-header-29">
+                  <span class="acc-title">Excellence in Design Project</span>
+                </button>
+                <div class="acc-body" id="elig-body-29" aria-labelledby="elig-header-29">
+                  <div class="acc-content">
+                    <div class="acc-content-box">
+                      <ul class="acc-list">
+                        <li>The project must fall under either architecture or interior design within residential or commercial real estate.</li>
+                        <li>Residential entries should show premium positioning, high-value units, or strong design-led differentiation.</li>
+                        <li>Commercial entries should show Grade A or Grade A+ specifications, quality occupiers or tenants, or enhanced workplace and environmental experience.</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="cat-tab-panel" id="elig-panel-individual-awards" role="tabpanel" aria-labelledby="elig-tab-individual-awards">
+            <div class="cat-panel-header">
+              <div class="cat-panel-details">
+                <h3 class="cat-panel-title">Individual Awards</h3>
+                <p class="cat-panel-desc">Criteria for leadership and individual-contribution recognitions.</p>
+              </div>
+            </div>
+
+            <div class="cat-accordion">
+
+              <div class="acc-item active">
+                <button class="acc-header" aria-expanded="true" aria-controls="elig-body-30" id="elig-header-30">
+                  <span class="acc-title">Architect of the Year</span>
+                </button>
+                <div class="acc-body" id="elig-body-30" aria-labelledby="elig-header-30">
+                  <div class="acc-content">
+                    <div class="acc-content-box">
+                      <ul class="acc-list">
+                        <li>The nominee must have a minimum of 8 years of professional experience in architecture as of March 31, 2026.</li>
+                        <li>The nominee must have been involved in the design and execution of at least 5 completed projects, with a minimum of 2 projects completed within the last 3 years.</li>
+                        <li>The nominee must be actively practicing in South India, with projects located within the region.</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="acc-item">
+                <button class="acc-header" aria-expanded="false" aria-controls="elig-body-31" id="elig-header-31">
+                  <span class="acc-title">Business Leader of the Year</span>
+                </button>
+                <div class="acc-body" id="elig-body-31" aria-labelledby="elig-header-31">
+                  <div class="acc-content">
+                    <div class="acc-content-box">
+                      <ul class="acc-list">
+                        <li>The nominee must have a minimum of 10 years of experience in the real estate sector as of March 31, 2026.</li>
+                        <li>The nominee must have held a leadership role for at least 2 years in the current organization.</li>
+                        <li>The nominee must currently hold a leadership role such as CXO, Director, VP, or equivalent.</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="acc-item">
+                <button class="acc-header" aria-expanded="false" aria-controls="elig-body-32" id="elig-header-32">
+                  <span class="acc-title">Woman Leader of the Year</span>
+                </button>
+                <div class="acc-body" id="elig-body-32" aria-labelledby="elig-header-32">
+                  <div class="acc-content">
+                    <div class="acc-content-box">
+                      <ul class="acc-list">
+                        <li>The nominee must be a female and have a minimum of 10 years of professional experience in the real estate sector as of March 31, 2026.</li>
+                        <li>The nominee must have held a leadership role for at least 2 years in the current organization.</li>
+                        <li>The nominee must currently hold a leadership role such as CXO, Director, VP, or equivalent.</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="acc-item">
+                <button class="acc-header" aria-expanded="false" aria-controls="elig-body-33" id="elig-header-33">
+                  <span class="acc-title">Emerging Leader of the Year</span>
+                </button>
+                <div class="acc-body" id="elig-body-33" aria-labelledby="elig-header-33">
+                  <div class="acc-content">
+                    <div class="acc-content-box">
+                      <ul class="acc-list">
+                        <li>The nominee must have up to 10 years of professional experience in the real estate sector as of March 31, 2026.</li>
+                        <li>The nominee must have a minimum of 1 year of tenure in the current organization as of March 31, 2026.</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="acc-item">
+                <button class="acc-header" aria-expanded="false" aria-controls="elig-body-34" id="elig-header-34">
+                  <span class="acc-title">CMO / Marketer of the Year</span>
+                </button>
+                <div class="acc-body" id="elig-body-34" aria-labelledby="elig-header-34">
+                  <div class="acc-content">
+                    <div class="acc-content-box">
+                      <ul class="acc-list">
+                        <li>The nominee must have a minimum of 10 years of professional experience in real estate marketing.</li>
+                        <li>The nominee must have held a leadership role for at least 2 years in the current organization.</li>
+                        <li>The nominee must currently hold a senior marketing leadership role such as CMO, Head of Marketing, Marketing Director, or equivalent.</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="cat-tab-panel" id="elig-panel-technology-awards" role="tabpanel" aria-labelledby="elig-tab-technology-awards">
+            <div class="cat-panel-header">
+              <div class="cat-panel-details">
+                <h3 class="cat-panel-title">Technology Awards</h3>
+                <p class="cat-panel-desc">Criteria for technology, innovation and solutions recognitions.</p>
+              </div>
+            </div>
+
+            <div class="cat-accordion">
+
+              <div class="acc-item active">
+                <button class="acc-header" aria-expanded="true" aria-controls="elig-body-35" id="elig-header-35">
+                  <span class="acc-title">Real Estate Website of the Year</span>
+                </button>
+                <div class="acc-body" id="elig-body-35" aria-labelledby="elig-header-35">
+                  <div class="acc-content">
+                    <div class="acc-content-box">
+                      <ul class="acc-list">
+                        <li>The website must be owned and operated by a real estate company or agency and active as of March 31, 2026.</li>
+                        <li>The platform must demonstrate measurable user engagement such as traffic, lead generation, or conversion metrics.</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          </main>
+        </div>
       </div>
 
       <p class="eligibility-footnote">All eligibility references in this section are based on the latest Times Real
@@ -2103,7 +2224,7 @@
     <div class="why-grid">
       <article class="why-card">
         <div class="why-num">01</div>
-        <h3 class="why-title">Regional Recognition &amp; Reach</h3>
+        <h3 class="why-title">Regional Recognition and Reach</h3>
         <p class="why-desc">Earn an award backed by one of South India's most credible media brands, with your
           achievement reaching millions of readers, viewers, and digital audiences across the region.</p>
       </article>
@@ -2136,7 +2257,7 @@
        ============================================================ -->
   <section class="pricing" id="pricing" data-section="pricing">
     <div class="pricing-header">
-      <h2 class="section-display">Choose Your Nomination Tier</h2>
+      <h2 class="section-display">Prime Nomination Tiers</h2>
     </div>
 
     <div class="pricing-grid">
@@ -2231,6 +2352,41 @@
             and excellence.</p>
         </div>
       </article>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       9.5 · CONTACT US
+       ============================================================ -->
+  <section class="summit-contact" id="contact-us" data-section="contact-us">
+    <div class="summit-head">
+      <h2 class="section-display">Contact Us</h2>
+    </div>
+    <div class="summit-contact-grid">
+      <div class="enquiry-card">
+        <p class="enquiry-title">Speaking and Nominations Enquiries</p>
+        <p class="enquiry-name">Sagun Kumari</p>
+        <a href="mailto:sagun.kumari@timesinternet.in" class="enquiry-contact">sagun.kumari@timesinternet.in</a>
+        <a href="tel:+919304412377" class="enquiry-contact">+91 93044 12377</a>
+      </div>
+      <div class="enquiry-card">
+        <p class="enquiry-title">Personalized Sponsorship Enquiries</p>
+        <p class="enquiry-name">Gaurav Vats</p>
+        <a href="mailto:gaurav.vats@timesinternet.in" class="enquiry-contact">gaurav.vats@timesinternet.in</a>
+        <a href="tel:+919811573962" class="enquiry-contact">+91 98115 73962</a>
+      </div>
+      <div class="enquiry-card">
+        <p class="enquiry-title">Awards Nominations Enquiry</p>
+        <p class="enquiry-name">Simran Singh</p>
+        <a href="mailto:simran1@timesinternet.in" class="enquiry-contact">simran1@timesinternet.in</a>
+        <a href="tel:+917838788554" class="enquiry-contact">+91 7838788554</a>
+      </div>
+      <div class="enquiry-card">
+        <p class="enquiry-title">Premium Brand Partnerships</p>
+        <p class="enquiry-name">Deepika Pawar</p>
+        <a href="mailto:deepika.pawar@timesinternet.in" class="enquiry-contact">deepika.pawar@timesinternet.in</a>
+        <a href="tel:+919971129087" class="enquiry-contact">+91 9971129087</a>
+      </div>
     </div>
   </section>
 
@@ -2332,9 +2488,9 @@
       </details>
 
       <details class="faq-item">
-        <summary>Where can I access the Terms &amp; Conditions?<span class="faq-x">+</span></summary>
+        <summary>Where can I access the Terms and Conditions?<span class="faq-x">+</span></summary>
         <div class="faq-a">
-          <p>The detailed Terms &amp; Conditions can be accessed <a
+          <p>The detailed Terms and Conditions can be accessed <a
               href="https://docs.google.com/document/d/e/2PACX-1vQwoIwhKNaSkLSQ4ifsGostMDVhyjVPWmLnkfPV6PENbrmlbsNi7lS9L8ybWp1puw/pub"
               target="_blank" rel="noopener noreferrer">here</a>.</p>
         </div>
@@ -2429,7 +2585,7 @@
             <label for="check-terms">I accept the <a
                 href="https://docs.google.com/document/d/e/2PACX-1vQwoIwhKNaSkLSQ4ifsGostMDVhyjVPWmLnkfPV6PENbrmlbsNi7lS9L8ybWp1puw/pub"
                 target="_blank" rel="noopener noreferrer" style="text-decoration: underline; color: inherit;">Terms
-                &amp; Conditions</a> and Privacy Policy. *</label>
+                and Conditions</a> and Privacy Policy. *</label>
             <span class="error-msg" id="error-terms">You must accept the terms and conditions.</span>
           </div>
         </div>
@@ -2454,6 +2610,7 @@
       </div>
     </div>
   </section>
+
 
   <!-- ============================================================
        10 · FOOTER · Editorial Mast
@@ -2494,7 +2651,7 @@
       <a href="#">Privacy</a>
       <span class="footer-dot">·</span>
       <a href="https://docs.google.com/document/d/e/2PACX-1vQwoIwhKNaSkLSQ4ifsGostMDVhyjVPWmLnkfPV6PENbrmlbsNi7lS9L8ybWp1puw/pub"
-        target="_blank" rel="noopener noreferrer">Terms &amp; Conditions</a>
+        target="_blank" rel="noopener noreferrer">Terms and Conditions</a>
     </div>
   </footer>
 
@@ -2508,10 +2665,9 @@
     </div>
   </div>
 
-  <script src="https://navbharattimes.indiatimes.com/campaignhub/minifyjs/login/loginSupporter.js"></script>
+  <script defer src="https://navbharattimes.indiatimes.com/campaignhub/minifyjs/login/loginSupporter.js"></script>
 
-  <script src="main.js"></script>
-  <script src="enquiry.js"></script>
+  <script defer src="main.js"></script>
 </body>
 
 </html>

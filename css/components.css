@@ -2,7 +2,6 @@
    VKREA 2026 — "GOLDEN HOUR / MONUMENTAL"
    3 · COMPONENTS — buttons, navbar, form, modal
    ============================================================ */
-
 /* ============================================================
    BUTTONS
    ============================================================ */
@@ -28,11 +27,9 @@
               color var(--d-base) var(--ease-smooth),
               border-color var(--d-base) var(--ease-smooth);
 }
-
 .btn:active {
   transform: translateY(1px);
 }
-
 /* Primary — gold-gradient fill + glow, works on any band */
 .btn-primary {
   background: var(--gold-grad-soft);
@@ -40,39 +37,29 @@
   border: 1px solid transparent;
   box-shadow: var(--glow-soft);
 }
-
 .btn-primary:hover {
   box-shadow: var(--glow-gold);
   transform: translateY(-2px);
 }
-
 /* Ghost — outline that adapts to band via semantic vars */
 .btn-ghost {
   background: transparent;
   color: var(--text);
   border: 1px solid var(--line-strong);
 }
-
 .btn-ghost:hover {
   border-color: var(--accent);
   color: var(--accent);
   box-shadow: var(--glow-soft);
 }
-
 .btn-block {
   width: 100%;
 }
-
 .btn-large {
   padding: 19px 44px;
   font-size: 13px;
 }
-
 /* Optional sharp variant if a squared look is wanted anywhere */
-.btn-sharp {
-  border-radius: 0;
-}
-
 /* ============================================================
    NAVBAR — dark glass, gold hairline, gradient CTA
    ============================================================ */
@@ -92,13 +79,11 @@
               background var(--d-base) var(--ease-smooth),
               box-shadow var(--d-base) var(--ease-smooth);
 }
-
 .nav.scrolled {
   padding: 11px var(--gutter);
   background: rgba(251, 246, 236, 0.94);
   box-shadow: 0 12px 40px -22px rgba(60, 42, 14, 0.35);
 }
-
 .nav-row {
   display: flex;
   align-items: center;
@@ -107,58 +92,21 @@
   margin: 0 auto;
   padding: 0 32px;
 }
-
 .nav-logo img {
   display: block;
   height: 28px;
   width: auto;
   object-fit: contain;
 }
-
 .nav-logo-ti img { height: 26px; }
 .nav-logo-vk img { height: 28px; }
 .nav-logo-tll img { height: 22px; }
-
-.nav-sep {
-  width: 1px;
-  height: 28px;
-  background: rgba(122, 84, 16, 0.30);
-}
-
-.nav-initiative {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.nav-initiative-tag {
-  font-family: var(--font-body);
-  font-size: 8px;
-  letter-spacing: 0.32em;
-  text-transform: uppercase;
-  color: var(--gold-deep);
-  font-weight: 600;
-}
-
-.nav-initiative-row {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-.nav-mini-sep {
-  width: 1px;
-  height: 18px;
-  background: rgba(122, 84, 16, 0.30);
-}
-
 .nav-links {
   margin-left: auto;
   display: flex;
   gap: 34px;
   align-items: center;
 }
-
 .nav-links a {
   position: relative;
   font-size: 13px;
@@ -167,11 +115,9 @@
   color: rgba(25, 19, 8, 0.72);
   transition: color var(--d-fast) var(--ease-smooth);
 }
-
 .nav-links a:hover {
   color: var(--ink);
 }
-
 .nav-links a::after {
   content: '';
   position: absolute;
@@ -185,11 +131,9 @@
   transform-origin: left;
   transition: transform var(--d-base) var(--ease-stage);
 }
-
 .nav-links a:hover::after {
   transform: scaleX(1);
 }
-
 .nav-all-events {
   display: inline-flex;
   align-items: center;
@@ -205,7 +149,6 @@
   padding-right: 18px;
   border-right: 1px solid var(--line-strong);
 }
-
 .nav-all-events::before {
   content: '';
   width: 7px;
@@ -216,19 +159,15 @@
   box-shadow: 0 0 0 3px rgba(240, 132, 44, 0.18);
   animation: navAllEventsBlink 1s steps(2, end) infinite;
 }
-
 .nav-all-events:hover {
   color: var(--ember) !important;
 }
-
 .nav-all-events::after {
   display: none;
 }
-
 @keyframes navAllEventsBlink {
   50% { opacity: 0.35; }
 }
-
 /* Cross-page link (Summit <-> Awards) — a distinct pill */
 .nav-summit-link {
   color: var(--gold-deep);
@@ -237,17 +176,14 @@
   border-radius: var(--radius-pill);
   padding: 6px 15px;
 }
-
 .nav-summit-link::after {
   display: none;
 }
-
 .nav-summit-link:hover {
   color: var(--night-0);
   background: var(--gold-grad-soft);
   border-color: transparent;
 }
-
 .nav-cta {
   display: inline-flex;
   align-items: center;
@@ -263,19 +199,16 @@
   box-shadow: 0 10px 30px -14px rgba(232, 185, 72, 0.6);
   transition: transform var(--d-fast) var(--ease-quart), box-shadow var(--d-base) var(--ease-smooth);
 }
-
 .nav-cta:hover {
   transform: translateY(-2px);
   box-shadow: var(--glow-gold);
 }
-
 .nav-burger {
   display: none;
   flex-direction: column;
   gap: 5px;
   padding: 6px;
 }
-
 .nav-burger span {
   display: block;
   width: 22px;
@@ -284,15 +217,12 @@
   background: var(--gold-deep);
   transition: transform var(--d-fast) var(--ease-smooth), opacity var(--d-fast) var(--ease-smooth);
 }
-
 .nav-burger.open span:first-child {
   transform: translateY(3.5px) rotate(45deg);
 }
-
 .nav-burger.open span:last-child {
   transform: translateY(-3.5px) rotate(-45deg);
 }
-
 /* ============================================================
    NOMINATION FORM
    ============================================================ */
@@ -304,24 +234,20 @@
   width: 100%;
   box-shadow: var(--elev-2);
 }
-
 .form-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 24px;
   margin-bottom: 24px;
 }
-
 .form-group {
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
-
 .form-group.full-width {
   grid-column: span 2;
 }
-
 .form-group label {
   font-family: var(--font-body);
   font-size: 12px;
@@ -330,7 +256,6 @@
   text-transform: uppercase;
   color: var(--text);
 }
-
 .form-group input,
 .form-group select {
   font-family: var(--font-body);
@@ -344,9 +269,7 @@
   border-radius: var(--radius-sm);
   transition: border-color var(--d-fast) var(--ease-smooth), box-shadow var(--d-fast) var(--ease-smooth);
 }
-
 .form-group select { cursor: pointer; }
-
 .form-group textarea {
   font-family: var(--font-body);
   font-size: 14px;
@@ -361,38 +284,30 @@
   border-radius: var(--radius-sm);
   transition: border-color var(--d-fast) var(--ease-smooth), box-shadow var(--d-fast) var(--ease-smooth);
 }
-
 .form-group textarea::placeholder { color: var(--text-faint); }
-
 .form-group textarea:focus {
   border-color: var(--gold);
   box-shadow: var(--focus-ring);
 }
-
 .form-group input::placeholder {
   color: var(--text-faint);
 }
-
 .form-group input:focus,
 .form-group select:focus {
   border-color: var(--gold);
   box-shadow: var(--focus-ring);
 }
-
 .form-group select option {
   background: var(--parch-0);
   color: var(--ink);
 }
-
 .phone-input-row {
   display: flex;
   gap: 12px;
 }
-
 .phone-input-row input {
   flex: 1;
 }
-
 .phone-input-row .btn {
   flex-shrink: 0;
   padding: 0 20px;
@@ -400,37 +315,30 @@
   height: auto;
   white-space: nowrap;
 }
-
 .otp-row[hidden],
 .otp-verified[hidden],
 .otp-hint[hidden] {
   display: none !important;
 }
-
 .otp-row {
   margin-top: 12px;
   display: flex;
   gap: 12px;
 }
-
 .otp-row input { flex: 1; }
-
 .otp-row .btn {
   flex-shrink: 0;
   padding: 0 20px;
 }
-
 .otp-hint {
   display: block;
   font-size: 11px;
   margin-top: 8px;
   color: var(--text-faint);
 }
-
 .otp-hint.success { color: var(--success); }
 .otp-hint.error { color: var(--error); }
 .otp-hint.info { color: var(--text-muted); }
-
 .otp-verified {
   display: inline-flex;
   align-items: center;
@@ -444,7 +352,6 @@
   font-weight: 600;
   border-radius: var(--radius-sm);
 }
-
 .error-msg {
   font-size: 11px;
   color: var(--error);
@@ -452,30 +359,25 @@
   margin-top: 2px;
   display: none;
 }
-
 .form-group.has-error input,
 .form-group.has-error select {
   border-color: var(--error);
 }
-
 .form-group.has-error .error-msg {
   display: block;
 }
-
 .form-checkboxes {
   display: flex;
   flex-direction: column;
   gap: 12px;
   margin-bottom: 32px;
 }
-
 .checkbox-group {
   display: flex;
   align-items: flex-start;
   gap: 10px;
   position: relative;
 }
-
 .checkbox-group input[type="checkbox"] {
   width: 16px;
   height: 16px;
@@ -484,30 +386,25 @@
   margin-top: 4px;
   flex-shrink: 0;
 }
-
 .checkbox-group label {
   font-size: 12.5px;
   color: var(--text-muted);
   line-height: 1.5;
   cursor: pointer;
 }
-
 .checkbox-group.has-error label {
   color: var(--error);
 }
-
 .checkbox-group.has-error .error-msg {
   display: block;
   position: absolute;
   bottom: -18px;
   left: 26px;
 }
-
 .form-submit-row {
   display: flex;
   justify-content: center;
 }
-
 .form-submit-row .btn {
   width: 100%;
   max-width: 340px;
@@ -515,7 +412,6 @@
   font-size: 14px;
   font-weight: 700;
 }
-
 /* Enquiry / partnership forms — inline success state */
 .ef-success {
   text-align: center;
@@ -525,9 +421,7 @@
   align-items: center;
   gap: 12px;
 }
-
 .ef-success[hidden] { display: none; }
-
 .ef-success-icon {
   width: 60px;
   height: 60px;
@@ -540,7 +434,6 @@
   box-shadow: var(--glow-gold);
   margin-bottom: 4px;
 }
-
 .ef-success h3 {
   font-family: var(--font-display);
   font-size: clamp(22px, 2.4vw, 30px);
@@ -548,14 +441,12 @@
   color: var(--text);
   line-height: 1.2;
 }
-
 .ef-success p {
   font-size: 14px;
   color: var(--text-muted);
   line-height: 1.6;
   max-width: 46ch;
 }
-
 /* ============================================================
    SUCCESS MODAL — dark glass, gold glow
    ============================================================ */
@@ -571,7 +462,6 @@
   z-index: 1000;
   padding: var(--gutter);
 }
-
 .success-card {
   background: linear-gradient(180deg, var(--night-1), var(--night-0));
   border: 1px solid var(--line-strong);
@@ -586,7 +476,6 @@
   flex-direction: column;
   align-items: center;
 }
-
 .success-card h3 {
   font-family: var(--font-display);
   font-size: clamp(24px, 2.5vw, 34px);
@@ -595,14 +484,12 @@
   margin-bottom: 16px;
   line-height: 1.2;
 }
-
 .success-message {
   font-size: 13.5px;
   color: rgba(247, 238, 220, 0.75);
   line-height: 1.6;
   margin-bottom: 32px;
 }
-
 .success-card .btn {
   width: 100%;
   max-width: 220px;

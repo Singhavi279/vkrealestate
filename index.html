@@ -8,10 +8,31 @@
     content="VK South Real Estate Summit 2026: Building Trust, Enabling Investment, and Shaping Sustainable Growth. A credible forum bringing policy, capital and industry together across Karnataka and South India.">
   <title>VK Real Estate Summit 2026 · Vijaya Karnataka</title>
   <link rel="canonical" href="https://timeslanguages.in/vkrealestate">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+  <meta name="keywords" content="VK Real Estate Summit 2026, Vijaya Karnataka, South India real estate, Bengaluru real estate summit, real estate conference Karnataka, property summit India, Times Internet">
+  <meta name="author" content="Vijaya Karnataka · Times Internet">
+  <meta name="theme-color" content="#1C140B">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="VK Real Estate Summit &amp; Awards 2026">
+  <meta property="og:locale" content="en_IN">
   <meta property="og:title" content="VK Real Estate Summit 2026 · Vijaya Karnataka">
-  <meta property="og:description"
-    content="Building Trust. Enabling Investment. Shaping Sustainable Growth. South India's real estate summit.">
+  <meta property="og:description" content="Building Trust. Enabling Investment. Shaping Sustainable Growth. South India's real estate summit in Bengaluru, September 2026.">
   <meta property="og:url" content="https://timeslanguages.in/vkrealestate">
+  <meta property="og:image" content="https://timeslanguages.in/vkrealestate/css/hero-summit.webp">
+  <meta property="og:image:secure_url" content="https://timeslanguages.in/vkrealestate/css/hero-summit.webp">
+  <meta property="og:image:type" content="image/webp">
+  <meta property="og:image:width" content="1920">
+  <meta property="og:image:height" content="1409">
+  <meta property="og:image:alt" content="VK Real Estate Summit 2026, Bengaluru">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="VK Real Estate Summit 2026 · Vijaya Karnataka">
+  <meta name="twitter:description" content="Building Trust. Enabling Investment. Shaping Sustainable Growth. South India's real estate summit in Bengaluru, September 2026.">
+  <meta name="twitter:image" content="https://timeslanguages.in/vkrealestate/css/hero-summit.webp">
+  <meta name="twitter:image:alt" content="VK Real Estate Summit 2026, Bengaluru">
   <meta name="google-site-verification" content="JYn_NFaOSK9Z4vPZe4n6l-aLTP_zoMrbmOEaUKy0l7o" />
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-6TLYWEPS3Y"></script>
@@ -41,12 +62,31 @@
     window.platform = "desktop";
   </script>
 
-  <!-- Fonts -->
+  <!-- Fonts (non-render-blocking) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Noto+Serif+Kannada:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&family=Poppins:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Serif+Kannada:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700&family=Poppins:wght@300;400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+Kannada:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700&family=Poppins:wght@300;400;500;600;700&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+Kannada:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700&family=Poppins:wght@300;400;500;600;700&display=swap"></noscript>
+
+  <!-- Preload LCP assets. Heavy hero background is preloaded only on fast
+       connections; on save-data / 2G it is skipped (see .slow-net in CSS). -->
+  <link rel="preload" as="image" href="css/vklogo.webp">
+  <script>
+    (function () {
+      var c = navigator.connection || {};
+      var slow = c.saveData === true || /(^|-)2g$/.test(c.effectiveType || '');
+      if (slow) {
+        document.documentElement.classList.add('slow-net');
+      } else {
+        var l = document.createElement('link');
+        l.rel = 'preload'; l.as = 'image';
+        l.href = 'css/hero-summit.webp';
+        l.setAttribute('fetchpriority', 'high');
+        document.head.appendChild(l);
+      }
+    })();
+  </script>
 
   <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/base.css">
@@ -54,6 +94,80 @@
   <link rel="stylesheet" href="css/sections.css">
   <link rel="stylesheet" href="css/responsive.css">
   <link rel="stylesheet" href="css/summit.css">
+  <!-- Structured data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://timeslanguages.in/vkrealestate/#organizer",
+        "name": "Vijaya Karnataka",
+        "url": "https://vijaykarnataka.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://vijaykarnataka.com/thumb/119164298/vijaykarnataka.jpg?width=474&resizemode=4"
+        },
+        "parentOrganization": {
+          "@type": "Organization",
+          "name": "Times Internet"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://timeslanguages.in/vkrealestate/#website",
+        "url": "https://timeslanguages.in/vkrealestate",
+        "name": "VK Real Estate Summit & Awards 2026",
+        "publisher": {
+          "@id": "https://timeslanguages.in/vkrealestate/#organizer"
+        },
+        "inLanguage": "en-IN"
+      },
+      {
+        "@type": "Event",
+        "name": "VK Real Estate Summit 2026",
+        "description": "South India's real estate summit bringing policy, capital and industry together in Bengaluru, September 2026 — Building Trust, Enabling Investment, and Shaping Sustainable Growth.",
+        "startDate": "2026-09",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "location": {
+          "@type": "Place",
+          "name": "Bengaluru",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Bengaluru",
+            "addressRegion": "Karnataka",
+            "addressCountry": "IN"
+          }
+        },
+        "image": [
+          "https://timeslanguages.in/vkrealestate/css/hero-summit.webp"
+        ],
+        "url": "https://timeslanguages.in/vkrealestate",
+        "organizer": {
+          "@id": "https://timeslanguages.in/vkrealestate/#organizer"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://timeslanguages.in/vkrealestate"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Summit",
+            "item": "https://timeslanguages.in/vkrealestate"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body>
@@ -64,7 +178,7 @@
   <header class="nav" id="nav">
     <div class="nav-row">
       <div class="nav-logo nav-logo-ti">
-        <img src="https://timesinternet.in/assets/images/logo-blue-new.png" alt="Times Internet">
+        <img src="https://timesinternet.in/assets/images/logo-blue-new.png" alt="Times Internet" loading="lazy" decoding="async">
       </div>
 
       <nav class="nav-links" aria-label="Primary">
@@ -76,6 +190,7 @@
         <a href="#forums">Forums</a>
         <a href="#attend">Attend</a>
         <a href="#partner-enquiry">Partner</a>
+        <a href="#contact">Contact Us</a>
       </nav>
 
       <a href="#attend" class="nav-cta">Enquire</a>
@@ -99,9 +214,11 @@
       <div class="summit-hero-inner">
 
         <!-- Main Title -->
-        <h1 class="summit-headline">
-          <span class="line"><span class="line-inner">VK Real Estate</span></span>
-          <span class="line"><span class="line-inner">Summit &amp; Awards 2026</span></span>
+        <h1 class="summit-headline stacked-headline">
+          <span class="line"><span class="line-inner logo-line"><img src="css/vklogo.webp" alt="VK" width="1000" height="212"
+                fetchpriority="high" decoding="async" class="vk-hero-logo-stacked"></span></span>
+          <span class="line"><span class="line-inner text-line"><span>Real</span><span>Estate</span></span></span>
+          <span class="line"><span class="line-inner text-line"><span>Summit</span><span>2026</span></span></span>
         </h1>
 
         <!-- Subtitle -->
@@ -110,7 +227,7 @@
         </p>
 
         <!-- Meta line -->
-        <p class="summit-meta">South India · Bengaluru · 2026</p>
+        <p class="summit-meta">Bengaluru · September 2026</p>
 
         <!-- Partner Logos -->
         <div class="hero-partners-row summit-partners-row">
@@ -119,11 +236,11 @@
             <div class="hero-initiative-logos">
               <div class="hero-initiative-logo">
                 <img src="https://vijaykarnataka.com/thumb/119164298/vijaykarnataka.jpg?width=474&resizemode=4"
-                  alt="Vijaya Karnataka">
+                  alt="Vijaya Karnataka" loading="lazy" decoding="async">
               </div>
               <span class="hero-initiative-sep" aria-hidden="true"></span>
               <div class="hero-initiative-logo">
-                <img src="https://static.langimg.com/photo/131008221.cms" alt="Times Languages Live">
+                <img src="https://static.langimg.com/photo/131008221.cms" alt="Times Languages Live" loading="lazy" decoding="async">
               </div>
             </div>
           </div>
@@ -144,10 +261,10 @@
        ============================================================ -->
   <section class="overview" id="about" data-section="about">
     <div class="overview-container">
+      <h2 class="section-display overview-title">A credible forum for South India's real estate future</h2>
       <div class="overview-grid">
         <div class="overview-headline">
-          <h2 class="section-display">A credible forum for<br>South India's real estate future</h2>
-          <img src="css/summit-about.webp" class="overview-image" alt="Bengaluru Premium Real Estate">
+          <img src="css/summit-about.webp" class="overview-image" alt="Bengaluru Premium Real Estate" width="900" height="900" loading="lazy" decoding="async">
         </div>
         <div class="overview-text">
           <p class="overview-lead">
@@ -171,7 +288,7 @@
             while water security, climate resilience and sustainable construction are no longer optional.
           </p>
           <p class="overview-body">
-            The VK South Real Estate Summit &amp; Awards 2026 has been conceived as a forum
+            The VK South Real Estate Summit and Awards 2026 has been conceived as a forum
             where these conversations move beyond individual markets. More than a conference, it is a
             platform to align policy with industry priorities, encourage responsible and sustainable
             development, and strengthen confidence among homebuyers, investors and all stakeholders.
@@ -195,15 +312,15 @@
       </article>
       <article class="discuss-card">
         <div class="discuss-num">02</div>
-        <h3 class="discuss-title">Faster approvals &amp; ease of development</h3>
+        <h3 class="discuss-title">Faster approvals and ease of development</h3>
       </article>
       <article class="discuss-card">
         <div class="discuss-num">03</div>
-        <h3 class="discuss-title">RERA implementation &amp; regulatory consistency</h3>
+        <h3 class="discuss-title">RERA implementation and regulatory consistency</h3>
       </article>
       <article class="discuss-card">
         <div class="discuss-num">04</div>
-        <h3 class="discuss-title">Land acquisition &amp; planning reforms</h3>
+        <h3 class="discuss-title">Land acquisition and planning reforms</h3>
       </article>
       <article class="discuss-card">
         <div class="discuss-num">05</div>
@@ -223,7 +340,7 @@
       </article>
       <article class="discuss-card">
         <div class="discuss-num">09</div>
-        <h3 class="discuss-title">Green buildings &amp; ESG expectations</h3>
+        <h3 class="discuss-title">Green buildings and ESG expectations</h3>
       </article>
       <article class="discuss-card">
         <div class="discuss-num">10</div>
@@ -276,15 +393,15 @@
     </div>
     <div class="attend-wrap">
       <div class="attend-chips">
-        <span class="attend-chip">Developers &amp; promoters</span>
-        <span class="attend-chip">Government &amp; urban-development policymakers</span>
-        <span class="attend-chip">Institutional investors, funds &amp; family offices</span>
-        <span class="attend-chip">Architects &amp; urban planners</span>
+        <span class="attend-chip">Developers and promoters</span>
+        <span class="attend-chip">Government and urban-development policymakers</span>
+        <span class="attend-chip">Institutional investors, funds and family offices</span>
+        <span class="attend-chip">Architects and urban planners</span>
         <span class="attend-chip">PropTech founders</span>
         <span class="attend-chip">Technology providers</span>
         <span class="attend-chip">Legal experts</span>
         <span class="attend-chip">Real estate transaction advisers</span>
-        <span class="attend-chip">NRI &amp; global Indian investor communities</span>
+        <span class="attend-chip">NRI and global Indian investor communities</span>
         <span class="attend-chip">Building-material suppliers</span>
         <span class="attend-chip">Sustainability consultants</span>
       </div>
@@ -296,7 +413,7 @@
        ============================================================ -->
   <section class="benefits" id="value" data-section="value">
     <div class="summit-head">
-      <h2 class="section-display">Why Attend &amp; Why Partner</h2>
+      <h2 class="section-display">Why Attend and Why Partner</h2>
     </div>
     <div class="benefits-grid">
       <div class="benefit-col">
@@ -524,16 +641,28 @@
     </div>
     <div class="summit-contact-grid">
       <div class="enquiry-card">
-        <p class="enquiry-title">Delegate &amp; Speaking Enquiries</p>
+        <p class="enquiry-title">Speaking and Nominations Enquiries</p>
         <p class="enquiry-name">Sagun Kumari</p>
         <a href="mailto:sagun.kumari@timesinternet.in" class="enquiry-contact">sagun.kumari@timesinternet.in</a>
         <a href="tel:+919304412377" class="enquiry-contact">+91 93044 12377</a>
       </div>
       <div class="enquiry-card">
-        <p class="enquiry-title">Partnership &amp; Sponsorship Enquiries</p>
+        <p class="enquiry-title">Personalized Sponsorship Enquiries</p>
         <p class="enquiry-name">Gaurav Vats</p>
         <a href="mailto:gaurav.vats@timesinternet.in" class="enquiry-contact">gaurav.vats@timesinternet.in</a>
         <a href="tel:+919811573962" class="enquiry-contact">+91 98115 73962</a>
+      </div>
+      <div class="enquiry-card">
+        <p class="enquiry-title">Awards Nominations Enquiry</p>
+        <p class="enquiry-name">Simran Singh</p>
+        <a href="mailto:simran1@timesinternet.in" class="enquiry-contact">simran1@timesinternet.in</a>
+        <a href="tel:+917838788554" class="enquiry-contact">+91 7838788554</a>
+      </div>
+      <div class="enquiry-card">
+        <p class="enquiry-title">Premium Brand Partnerships</p>
+        <p class="enquiry-name">Deepika Pawar</p>
+        <a href="mailto:deepika.pawar@timesinternet.in" class="enquiry-contact">deepika.pawar@timesinternet.in</a>
+        <a href="tel:+919971129087" class="enquiry-contact">+91 9971129087</a>
       </div>
     </div>
   </section>
@@ -585,9 +714,9 @@
     </div>
   </footer>
 
-  <script src="https://navbharattimes.indiatimes.com/campaignhub/minifyjs/login/loginSupporter.js"></script>
-  <script src="main.js"></script>
-  <script src="enquiry.js"></script>
+  <script defer src="https://navbharattimes.indiatimes.com/campaignhub/minifyjs/login/loginSupporter.js"></script>
+  <script defer src="main.js"></script>
+  <script defer src="enquiry.js"></script>
 </body>
 
 </html>
