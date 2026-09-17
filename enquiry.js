@@ -16,6 +16,9 @@
   const DEFAULT_ENDPOINT =
     'https://script.google.com/macros/s/AKfycbwLV6oKSWBW7kJ3SQvW9jLP5qDCONrC9j10H_BySVUqSPujLXYXGJwpulix-G0YBWUp/exec';
 
+  /* ---- Selected pass state for the modal ---- */
+  const passState = { tier: '', price: '', label: '' };
+
   function initEnquiryForm(form) {
     const q = (sel) => form.querySelector(sel);
     const formName = form.dataset.formName || 'Enquiry';
@@ -240,6 +243,9 @@
     }
     if (el.verifyOtp) el.verifyOtp.addEventListener('click', verifyOtp);
 
+    /* ---- Determine if this is the pass-purchase modal form ---- */
+    const isPassForm = form.id === 'pass-form';
+
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
       let isValid = true;
@@ -270,7 +276,7 @@
       }
 
       const payload = {
-        purpose,
+        purpose: isPassForm ? 'pass_purchase' : purpose,
         form_name: formName,
         name: el.name ? el.name.value.trim() : '',
         phone: phoneVal,
@@ -284,9 +290,16 @@
         terms: !!(el.terms && el.terms.checked),
       };
 
+      /* If this is the pass-purchase form, attach pass details */
+      if (isPassForm) {
+        payload.pass_tier = passState.tier;
+        payload.pass_price = passState.price;
+        payload.pass_label = passState.label;
+      }
+
       const grxData = {
         form_name: formName,
-        purpose,
+        purpose: payload.purpose,
         full_name: payload.name,
         phone_number: payload.phone,
         email: payload.email.toLowerCase(),
@@ -300,6 +313,10 @@
           (window.loginSupporter && window.loginSupporter.userDetails && window.loginSupporter.userDetails.ssoid) || '',
         host_url: window.location.href,
       };
+      if (isPassForm) {
+        grxData.pass_tier = passState.tier;
+        grxData.pass_price = passState.price;
+      }
 
       trackEvent('formSubmit', grxData);
       fireProfileSubmit(grxData);
@@ -320,21 +337,110 @@
             el.success.hidden = false;
             el.success.scrollIntoView({ behavior: 'smooth', block: 'center' });
           }
+
+          /* ---- Pass purchase: redirect to payment ---- */
+          if (isPassForm) {
+            const constants = window.constants || {};
+            const isProd = String(window.isProdEnv) !== 'false';
+            const envConfig = (constants.envDetails || {})[isProd ? 'production' : 'testing'] || {};
+            const paymentBase = envConfig.apiBaseURL || 'https://payment.economictimes.indiatimes.com';
+            const productId = envConfig.tcc_productId || 'tcc_may_26';
+
+            const payUrl = new URL(paymentBase + '/payment');
+            payUrl.searchParams.set('productId', productId);
+            payUrl.searchParams.set('pass', passState.tier);
+            payUrl.searchParams.set('amount', passState.price);
+            payUrl.searchParams.set('name', payload.name);
+            payUrl.searchParams.set('email', payload.email);
+            payUrl.searchParams.set('phone', payload.phone);
+            payUrl.searchParams.set('returnUrl', window.location.href);
+
+            setTimeout(() => {
+              window.location.href = payUrl.toString();
+            }, 1500);
+          }
         } else {
           alert('Submission failed. Please try again.');
         }
       } catch (error) {
         alert('Something went wrong. Please try again.');
       } finally {
-        if (el.submit) { el.submit.disabled = false; el.submit.textContent = 'Submit Enquiry'; }
+        if (el.submit) { el.submit.disabled = false; el.submit.textContent = isPassForm ? 'Save & Next' : 'Submit Enquiry'; }
       }
     });
 
     updateSendOtpButton();
   }
 
+  /* ============================================================
+     PASS PURCHASE — Modal open / close + pass selection
+     ============================================================ */
+  function initPassPurchase() {
+    const overlay = document.getElementById('pass-modal');
+    const closeBtn = document.getElementById('pass-modal-close');
+    const badge = document.getElementById('pass-modal-badge');
+    const passForm = document.getElementById('pass-form');
+
+    if (!overlay || !passForm) return;
+
+    const PASS_CLASSES = { lite: 'pass-lite', basic: 'pass-basic', premium: 'pass-premium' };
+
+    function openModal(tier, price, label) {
+      passState.tier = tier;
+      passState.price = price;
+      passState.label = label;
+
+      /* Update badge */
+      if (badge) {
+        badge.textContent = label;
+        badge.classList.remove('pass-lite', 'pass-basic', 'pass-premium');
+        badge.classList.add(PASS_CLASSES[tier] || 'pass-basic');
+      }
+
+      /* Reset form state for fresh use */
+      const efBody = passForm.querySelector('.ef-body');
+      const efSuccess = passForm.querySelector('.ef-success');
+      if (efBody) efBody.hidden = false;
+      if (efSuccess) efSuccess.hidden = true;
+
+      overlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+
+      /* Focus first input after animation frame */
+      requestAnimationFrame(() => {
+        const firstInput = passForm.querySelector('input[type="text"]');
+        if (firstInput) firstInput.focus();
+      });
+    }
+
+    function closeModal() {
+      overlay.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    /* Attach to all "Buy Now" buttons */
+    document.querySelectorAll('.ep-cta').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const tier = btn.dataset.pass || 'basic';
+        const price = btn.dataset.price || '999';
+        const label = btn.dataset.label || 'Basic Pass – ₹999';
+        openModal(tier, price, label);
+      });
+    });
+
+    /* Close handlers */
+    if (closeBtn) closeBtn.addEventListener('click', closeModal);
+    overlay.addEventListener('click', (e) => {
+      if (e.target === overlay) closeModal();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && overlay.classList.contains('active')) closeModal();
+    });
+  }
+
   function initEnquiryForms() {
     document.querySelectorAll('form.enquiry-form').forEach(initEnquiryForm);
+    initPassPurchase();
   }
 
   if (document.readyState === 'loading') {

@@ -438,80 +438,76 @@
   </section>
 
   <!-- ============================================================
-       6.5 · ENQUIRE TO ATTEND · Form
+       6.5 · EVENT PASSES · Pricing Cards
        ============================================================ -->
   <section class="contact" id="attend" data-section="attend">
     <div class="contact-header">
       <h2 class="section-display">Reserve Your Place</h2>
     </div>
-    <div class="contact-container">
-      <form class="enquiry-form nomination-form" data-form-name="Summit: Enquire to Attend" data-purpose="attend"
-        novalidate>
-        <div class="ef-body">
-          <div class="form-grid">
-            <div class="form-group">
-              <label for="at-name">Full Name</label>
-              <input class="ef-name" id="at-name" type="text" placeholder="Your full name" autocomplete="name">
-              <span class="error-msg">Please enter your name.</span>
-            </div>
-            <div class="form-group">
-              <label for="at-email">Email Address</label>
-              <input class="ef-email" id="at-email" type="email" placeholder="you@company.com" autocomplete="email">
-              <span class="error-msg">Please enter a valid email address.</span>
-            </div>
-            <div class="form-group">
-              <label for="at-company">Company / Organisation</label>
-              <input class="ef-company" id="at-company" type="text" placeholder="Company name"
-                autocomplete="organization">
-              <span class="error-msg">Please enter your organisation.</span>
-            </div>
-            <div class="form-group">
-              <label for="at-designation">Designation</label>
-              <input class="ef-designation" id="at-designation" type="text" placeholder="Your role"
-                autocomplete="organization-title">
-              <span class="error-msg">Please enter your designation.</span>
-            </div>
-            <div class="form-group full-width">
-              <label for="at-phone">Mobile Number</label>
-              <div class="phone-input-row">
-                <input class="ef-phone" id="at-phone" type="tel" inputmode="numeric"
-                  placeholder="10-digit mobile number" autocomplete="tel">
-                <button type="button" class="btn btn-ghost ef-send-otp">Send OTP</button>
-              </div>
-              <div class="otp-row ef-otp-row" hidden>
-                <input class="ef-otp" type="text" inputmode="numeric" placeholder="Enter 6-digit OTP">
-                <button type="button" class="btn btn-primary ef-verify-otp">Verify OTP</button>
-              </div>
-              <span class="otp-hint ef-otp-hint" hidden></span>
-              <span class="otp-verified ef-otp-verified" hidden>&#10003; Mobile number verified</span>
-              <span class="error-msg ef-phone-error">Please verify your phone number with OTP.</span>
-            </div>
-          </div>
-          <div class="form-checkboxes">
-            <div class="checkbox-group">
-              <input type="checkbox" class="ef-wa-optin" id="at-wa" checked>
-              <label for="at-wa">Send me updates and reminders on WhatsApp.</label>
-            </div>
-            <div class="checkbox-group">
-              <input type="checkbox" class="ef-email-optin" id="at-email-optin" checked>
-              <label for="at-email-optin">Send me updates and the agenda over email.</label>
-            </div>
-            <div class="checkbox-group">
-              <input type="checkbox" class="ef-terms" id="at-terms">
-              <label for="at-terms">I agree to the Terms of Use and Privacy Policy.</label>
-              <span class="error-msg">Please accept to continue.</span>
-            </div>
-          </div>
-          <div class="form-submit-row">
-            <button type="submit" class="btn btn-primary btn-block ef-submit">Submit Enquiry</button>
+    <div class="event-pass-grid">
+
+      <!-- LITE PASS -->
+      <article class="event-pass-card" id="pass-lite">
+        <div class="ep-header ep-header-lite">
+          <div class="ep-header-top">
+            <span class="ep-header-title">Lite</span>
+            <span class="ep-header-icon">🏢</span>
           </div>
         </div>
-        <div class="ef-success" hidden>
-          <span class="ef-success-icon" aria-hidden="true">&#10003;</span>
-          <h3>Thank you for your interest!</h3>
-          <p>Your enquiry has been received. Our team will reach out shortly with attendance details for the Summit.</p>
+        <div class="ep-price"><span class="ep-rupee">₹</span>499</div>
+        <span class="ep-tag ep-tag-lite">Lite Pass</span>
+        <ul class="ep-features">
+          <li><span class="ep-check ep-check-lite">✓</span> Summit Pass Only</li>
+          <li><span class="ep-check ep-check-lite">✓</span> Basic Seating</li>
+        </ul>
+        <div class="ep-cta-wrap">
+          <button class="ep-cta ep-cta-lite" data-pass="lite" data-price="499" data-label="Lite Pass – ₹499">Buy Now</button>
         </div>
-      </form>
+      </article>
+
+      <!-- BASIC PASS (Most Popular) -->
+      <article class="event-pass-card ep-spotlight" id="pass-basic">
+        <span class="ep-popular-badge">Most Popular</span>
+        <div class="ep-header ep-header-basic">
+          <div class="ep-header-top">
+            <span class="ep-header-title">Basic</span>
+            <span class="ep-header-icon">🏆</span>
+          </div>
+        </div>
+        <div class="ep-price"><span class="ep-rupee">₹</span>999</div>
+        <span class="ep-tag ep-tag-basic">Basic Pass</span>
+        <ul class="ep-features">
+          <li><span class="ep-check ep-check-basic">✓</span> Summit & Awards Pass</li>
+          <li><span class="ep-check ep-check-basic">✓</span> Premium Seating</li>
+          <li><span class="ep-check ep-check-basic">✓</span> High Tea / Coffee</li>
+        </ul>
+        <div class="ep-popular-label">Most Popular</div>
+        <div class="ep-cta-wrap">
+          <button class="ep-cta ep-cta-basic" data-pass="basic" data-price="999" data-label="Basic Pass – ₹999">Buy Now</button>
+        </div>
+      </article>
+
+      <!-- PREMIUM PASS -->
+      <article class="event-pass-card" id="pass-premium">
+        <div class="ep-header ep-header-premium">
+          <div class="ep-header-top">
+            <span class="ep-header-title">Premium</span>
+            <span class="ep-header-icon">💎</span>
+          </div>
+        </div>
+        <div class="ep-price"><span class="ep-rupee">₹</span>1999</div>
+        <span class="ep-tag ep-tag-premium">Premium Pass</span>
+        <ul class="ep-features">
+          <li><span class="ep-check ep-check-premium">✓</span> Summit & Awards Pass</li>
+          <li><span class="ep-check ep-check-premium">✓</span> VIP Seating</li>
+          <li><span class="ep-check ep-check-premium">✓</span> High Tea / Coffee</li>
+          <li><span class="ep-check ep-check-premium">✓</span> VIP Lunch</li>
+        </ul>
+        <div class="ep-cta-wrap">
+          <button class="ep-cta ep-cta-premium" data-pass="premium" data-price="1999" data-label="Premium Pass – ₹1999">Buy Now</button>
+        </div>
+      </article>
+
     </div>
   </section>
 
@@ -707,6 +703,79 @@
       <a href="#">Terms</a>
     </div>
   </footer>
+  <!-- ============================================================
+       PASS REGISTRATION MODAL
+       ============================================================ -->
+  <div class="pass-modal-overlay" id="pass-modal">
+    <div class="pass-modal-card">
+      <button class="pass-modal-close" id="pass-modal-close" aria-label="Close">✕</button>
+      <span class="pass-modal-selected" id="pass-modal-badge">Lite Pass – ₹499</span>
+      <h3 class="pass-modal-title">Complete Your Registration</h3>
+      <form class="enquiry-form" data-form-name="Summit: Pass Purchase" data-purpose="pass_purchase" id="pass-form" novalidate>
+        <div class="ef-body">
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="pm-name">Full Name</label>
+              <input class="ef-name" id="pm-name" type="text" placeholder="Your full name" autocomplete="name">
+              <span class="error-msg">Please enter your name.</span>
+            </div>
+            <div class="form-group">
+              <label for="pm-email">Email Address</label>
+              <input class="ef-email" id="pm-email" type="email" placeholder="you@company.com" autocomplete="email">
+              <span class="error-msg">Please enter a valid email address.</span>
+            </div>
+            <div class="form-group">
+              <label for="pm-designation">Designation</label>
+              <input class="ef-designation" id="pm-designation" type="text" placeholder="Your role" autocomplete="organization-title">
+              <span class="error-msg">Please enter your designation.</span>
+            </div>
+            <div class="form-group">
+              <label for="pm-company">Company / Organisation</label>
+              <input class="ef-company" id="pm-company" type="text" placeholder="Company name" autocomplete="organization">
+              <span class="error-msg">Please enter your organisation.</span>
+            </div>
+            <div class="form-group full-width">
+              <label for="pm-phone">Mobile Number</label>
+              <div class="phone-input-row">
+                <input class="ef-phone" id="pm-phone" type="tel" inputmode="numeric" placeholder="10-digit mobile number" autocomplete="tel">
+                <button type="button" class="btn btn-ghost ef-send-otp">Send OTP</button>
+              </div>
+              <div class="otp-row ef-otp-row" hidden>
+                <input class="ef-otp" type="text" inputmode="numeric" placeholder="Enter 6-digit OTP">
+                <button type="button" class="btn btn-primary ef-verify-otp">Verify OTP</button>
+              </div>
+              <span class="otp-hint ef-otp-hint" hidden></span>
+              <span class="otp-verified ef-otp-verified" hidden>&#10003; Mobile number verified</span>
+              <span class="error-msg ef-phone-error">Please verify your phone number with OTP.</span>
+            </div>
+          </div>
+          <div class="form-checkboxes">
+            <div class="checkbox-group">
+              <input type="checkbox" class="ef-wa-optin" id="pm-wa" checked>
+              <label for="pm-wa">Send me updates and reminders on WhatsApp.</label>
+            </div>
+            <div class="checkbox-group">
+              <input type="checkbox" class="ef-email-optin" id="pm-email-optin" checked>
+              <label for="pm-email-optin">Send me updates and the agenda over email.</label>
+            </div>
+            <div class="checkbox-group">
+              <input type="checkbox" class="ef-terms" id="pm-terms">
+              <label for="pm-terms">I agree to the Terms of Use and Privacy Policy.</label>
+              <span class="error-msg">Please accept to continue.</span>
+            </div>
+          </div>
+          <div class="form-submit-row">
+            <button type="submit" class="btn btn-primary btn-block ef-submit">Save & Next</button>
+          </div>
+        </div>
+        <div class="ef-success" hidden>
+          <span class="ef-success-icon" aria-hidden="true">&#10003;</span>
+          <h3>Registration complete!</h3>
+          <p>Redirecting you to payment…</p>
+        </div>
+      </form>
+    </div>
+  </div>
 
   <script defer src="https://navbharattimes.indiatimes.com/campaignhub/minifyjs/login/loginSupporter.js"></script>
   <script defer src="main.js"></script>

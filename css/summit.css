@@ -420,3 +420,362 @@
   }
 .cta-band-actions .btn { width: 100%; }
 }
+
+/* ============================================================
+   EVENT PASS CARDS — 3-tier pricing (Lite / Basic / Premium)
+   ============================================================ */
+.event-pass-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(20px, 2.6vw, 36px);
+  max-width: 1100px;
+  margin: 0 auto;
+  align-items: end;
+  width: 100%;
+}
+.event-pass-card {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: visible;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.08);
+  box-shadow: 0 8px 32px -12px rgba(0,0,0,0.13);
+  transition: transform var(--d-base) var(--ease-quart),
+              box-shadow var(--d-base) var(--ease-smooth);
+}
+.event-pass-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 48px -16px rgba(0,0,0,0.22);
+}
+/* Spotlight (Basic / Most Popular) — slightly elevated with warm amber glow */
+.event-pass-card.ep-spotlight {
+  transform: translateY(-12px);
+  box-shadow: 0 20px 56px -14px rgba(60, 42, 14, 0.22), 0 0 0 1px rgba(216, 84, 31, 0.16);
+  z-index: 2;
+}
+.event-pass-card.ep-spotlight:hover {
+  transform: translateY(-18px);
+  box-shadow: 0 28px 68px -16px rgba(60, 42, 14, 0.28), 0 0 0 1px rgba(216, 84, 31, 0.30);
+}
+/* ---- Header gradient bands ---- */
+.ep-header {
+  position: relative;
+  padding: 28px 28px 0;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  color: #fff;
+  overflow: hidden;
+}
+.ep-header-lite {
+  background: linear-gradient(135deg, #3A2B1C 0%, #5E462F 50%, #8A6846 100%);
+}
+.ep-header-basic {
+  background: linear-gradient(135deg, #8E2F0B 0%, #D8541F 50%, #F0842C 100%);
+}
+.ep-header-premium {
+  background: linear-gradient(135deg, #7A5410 0%, #C9962E 50%, #F3DFA6 100%);
+}
+.ep-header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 38px;
+  margin-bottom: 20px;
+}
+.ep-header-title {
+  font-family: var(--font-body);
+  font-size: clamp(18px, 1.8vw, 22px);
+  font-weight: 700;
+  line-height: 1.2;
+  color: #fff;
+  letter-spacing: -0.01em;
+}
+.ep-header-icon {
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.22);
+  border-radius: 8px;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+/* ---- Price ---- */
+.ep-price {
+  font-family: var(--font-display);
+  font-size: clamp(38px, 4vw, 54px);
+  font-weight: 800;
+  color: var(--night-1);
+  line-height: 1.1;
+  padding: 22px 28px 10px;
+}
+.ep-price .ep-rupee {
+  font-size: 0.65em;
+  vertical-align: top;
+  line-height: 1;
+  position: relative;
+  top: 0.06em;
+}
+/* ---- Tag pill ---- */
+.ep-tag {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 7px 18px;
+  border-radius: var(--radius-pill);
+  margin: 0 28px 18px;
+  width: fit-content;
+}
+.ep-tag-lite {
+  background: #5E462F;
+  color: #fff;
+}
+.ep-tag-basic {
+  background: #D8541F;
+  color: #fff;
+}
+.ep-tag-premium {
+  background: linear-gradient(135deg, #c9962e, #e8b948);
+  color: var(--night-0);
+}
+/* ---- Features list ---- */
+.ep-features {
+  padding: 0 28px;
+  margin-bottom: 22px;
+  flex: 1;
+}
+.ep-features li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1.45;
+}
+.ep-features li:last-child {
+  border-bottom: none;
+}
+.ep-check {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 11px;
+  font-weight: 700;
+  color: #fff;
+}
+.ep-check-lite { background: #5E462F; }
+.ep-check-basic { background: #D8541F; }
+.ep-check-premium { background: #c9962e; }
+/* ---- Most Popular badge ---- */
+.ep-popular-badge {
+  position: absolute;
+  top: -14px;
+  right: -8px;
+  background: linear-gradient(135deg, #8E2F0B, #D8541F);
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 6px 16px;
+  border-radius: var(--radius-sm);
+  transform: rotate(8deg);
+  box-shadow: 0 4px 14px rgba(216, 84, 31, 0.40);
+  z-index: 5;
+  white-space: nowrap;
+}
+/* "Most Popular" bottom label inside card */
+.ep-popular-label {
+  text-align: center;
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #D8541F;
+  background: rgba(216, 84, 31, 0.10);
+  padding: 6px 14px;
+  margin: 0 28px 4px;
+  border-radius: var(--radius-sm);
+}
+/* ---- CTA Button ---- */
+.ep-cta-wrap {
+  padding: 0 28px 28px;
+}
+.ep-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 14px 20px;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: var(--radius-sm);
+  border: 2px solid;
+  cursor: pointer;
+  transition: all var(--d-fast) var(--ease-smooth);
+}
+.ep-cta-lite {
+  background: transparent;
+  border-color: #5E462F;
+  color: #5E462F;
+}
+.ep-cta-lite:hover {
+  background: #5E462F;
+  color: #fff;
+}
+.ep-cta-basic {
+  background: #D8541F;
+  border-color: #D8541F;
+  color: #fff;
+}
+.ep-cta-basic:hover {
+  background: #BF4514;
+  border-color: #BF4514;
+  box-shadow: 0 6px 20px rgba(216, 84, 31, 0.35);
+}
+.ep-cta-premium {
+  background: linear-gradient(135deg, #c9962e, #e8b948);
+  border-color: transparent;
+  color: var(--night-0);
+}
+.ep-cta-premium:hover {
+  box-shadow: var(--glow-gold);
+  transform: translateY(-2px);
+}
+
+/* ============================================================
+   PASS REGISTRATION MODAL
+   ============================================================ */
+.pass-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 7, 4, 0.62);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: var(--gutter);
+  overflow-y: auto;
+}
+.pass-modal-overlay.active {
+  display: flex;
+}
+.pass-modal-card {
+  background: var(--parch-0);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: clamp(28px, 4vw, 48px);
+  max-width: 680px;
+  width: 100%;
+  position: relative;
+  box-shadow: var(--elev-3);
+  max-height: 90vh;
+  overflow-y: auto;
+  color: var(--ink);
+}
+.pass-modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.06);
+  border: none;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--ink);
+  transition: background var(--d-fast) var(--ease-smooth);
+  z-index: 2;
+}
+.pass-modal-close:hover {
+  background: rgba(0,0,0,0.12);
+}
+.pass-modal-selected {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #fff;
+  padding: 7px 18px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 20px;
+}
+.pass-modal-selected.pass-lite { background: #5E462F; }
+.pass-modal-selected.pass-basic { background: #D8541F; }
+.pass-modal-selected.pass-premium { background: linear-gradient(135deg, #c9962e, #e8b948); color: var(--night-0); }
+.pass-modal-title {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 2.4vw, 30px);
+  font-weight: 800;
+  color: var(--ink);
+  margin-bottom: 24px;
+  line-height: 1.2;
+}
+/* The modal form reuses existing .form-grid, .form-group, .phone-input-row,
+   .otp-row, .form-checkboxes, .form-submit-row component classes */
+
+/* ============================================================
+   EVENT PASS RESPONSIVE
+   ============================================================ */
+@media (max-width: 991px) {
+.event-pass-grid {
+    gap: 20px;
+  }
+.ep-header { padding: 22px 22px 0; }
+.ep-price { padding: 18px 22px 8px; font-size: clamp(32px, 5vw, 42px); }
+.ep-tag { margin: 0 22px 14px; }
+.ep-features { padding: 0 22px; }
+.ep-cta-wrap { padding: 0 22px 22px; }
+}
+@media (max-width: 767px) {
+.event-pass-grid {
+    grid-template-columns: 1fr;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+.event-pass-card.ep-spotlight {
+    transform: none;
+  }
+.event-pass-card.ep-spotlight:hover {
+    transform: translateY(-6px);
+  }
+.pass-modal-card {
+    padding: 24px 18px;
+    max-height: 95vh;
+  }
+.pass-modal-card .form-grid {
+    grid-template-columns: 1fr;
+  }
+.pass-modal-card .form-group.full-width {
+    grid-column: span 1;
+  }
+}
